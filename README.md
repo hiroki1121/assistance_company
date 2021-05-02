@@ -35,9 +35,12 @@
 |Column                  |Type        |Options                         |
 |------------------------|------------|--------------------------------|
 | company_name           | string     | null: false                    |
+| post_code              | string     | null: false                    |
 | prefecture_id          | integer    | null: false                    |
-| division               | string     |                                |
+| address                | string     | null: false                    |
+| building_name          | string     |                                |
 | employee_number        | integer    | null: false                    |
+| division               | string     |                                |
 | representative_name    | string     | null: false                    |
 | email                  | string     | null: false                    |
 | represent_phone_number | string     | null: false                    |
