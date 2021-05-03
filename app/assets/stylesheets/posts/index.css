@@ -1,0 +1,80 @@
+body {
+  background-color: #f7f7f7;
+}
+
+/* 背景画像 */
+.back-img {
+  background-image: url("https://cdn.pixabay.com/photo/2019/12/17/17/09/woman-4702060_1280.jpg");
+  background-size: 100vw;
+  background-repeat: no-repeat
+}
+
+/* 画像上文字列 */
+.app-description {
+  margin-left: 150px;
+  margin-top: 200px;
+}
+
+.description-text{
+  font-size: 20px;
+  padding: 5px;
+}
+
+.app-title-script {
+  font-size: 60px;
+  font-family: 'Pinyon Script', cursive;
+  padding: 50px;
+}
+
+/* 検索バー */
+.search-bar {
+  margin-top: 280px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button {
+  height: 50px;
+  background-color: #001e43;
+  color: #ffffff;
+  font-size: 14px;
+  border: 1px solid #001e43;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.input-box {
+  height: 50px;
+  width: 40vw;
+}
+
+/* 会社一覧 */
+.company-lists {
+  margin-top: 30px;
+}
+
+.company-lists-title {
+  margin-left: 280px;
+}
+
+.company-list {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1b1b1;
+  padding: 0px;
+  margin-left: 280px;
+}
+
+.company-img {
+  width: 300px;
+}
+
+.company-content-info {
+  font-family: Hiragino Mincho ProN;
+}

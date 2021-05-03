@@ -1,0 +1,25 @@
+.footer {
+  background-color: #efefef;
+  height: 100px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: black;
+}
+
+.c-app-name {
+  font-size: 15px;
+  text-align: center;
+}

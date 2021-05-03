@@ -1,0 +1,43 @@
+<%# 背景画像 %>
+<div class='back-img'>
+<%= render "shared/header" %>
+<body>
+<%# 画像上文字列 %>
+  <div class='app-description'>
+    <p class="description-text">Assistance Companyとは...</p>
+    <p class="description-text">・外注したいけど、どこに頼んでいいか分からない</p>
+    <p class="description-text">・自社の情報をもっと発信したい</p>
+    <p class="description-text">そんな方にオススメのサービスです！</p>
+    <p class="app-title-script">New encounter</p>
+  </div>
+
+  <%# 検索バー %>
+  <div class='search-bar'>
+    <form class="search-form" action="#">
+      <input class='input-box' placeholder='フリーワードを記入 (ex.東京都,設計)'>
+      <button class="search-button">検索する</button>
+    </form>
+  </div>
+<%# 会社一覧 %>
+  <div class='company-lists'>
+    <h1 class='company-lists-title'>会社一覧</h1>
+    <div class='company-list'>
+      <div class='company-content-img'>
+        <%= image_tag 'company-image.jpg', class: "company-img" %>
+      </div>
+      <div class='company-content-info'>
+        <h3 class='company-name'>
+          会 社 名：HOGEコンサルタント株式会社
+        </h3>
+        <h3 class='company-prefecture'>
+          所 在 地：東京都
+        </h3>
+        <h3 class='company-business-detail'>
+          業務内容：建設コンサルタント会社です。道路設計ができます！
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
+</div>
+<%= render "shared/footer" %>
