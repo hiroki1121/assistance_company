@@ -106,7 +106,8 @@
             <%= f.submit "変更する" ,class:"register-bronze-btn" %>
           </div>
           <div class='root-path'>
-            <%= link_to '戻る', post_path(@post.id), class: "root-path-tag"%>
+            <%# パスをshowアクションに変更する %>
+            <%= link_to '戻る', root_path, class: "root-path-tag"%>
           </div>
         </div>
       <% end %>

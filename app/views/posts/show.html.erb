@@ -46,7 +46,7 @@
   <div class="show-btn-form">
     <%= form_with(model: @post, local: true) do |f|%>
       <%# if contracted_side_user.id == current_user.id && user_signed_in? %>
-        <%= f.submit "編集する" ,class:"edit-path-btn" %>
+        <%= link_to "編集する", edit_post_path, method: :get, class: "edit-path-btn" %>
       <%# else %>
         <%= f.submit "お気に入り登録" ,class:"favorite-btn" %>
       <%# end %>
