@@ -4,9 +4,9 @@
     <h1 class="title-bar-main-content">新規登録</h1>
   </div>
 </div>
-<%= form_with url: new_consignment_side_user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @consignment_side_user, url: consignment_side_user_registration_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
-  <%#= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="form-group">
     <p class="warning-note">※会社をお探しの方</p>
     <div class='form-text-wrap'>
@@ -33,7 +33,7 @@
       <label class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"例)account@domain.com", autofocus: true %>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"account@domain.com", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -70,9 +70,9 @@
     <div class='register-btn'>
       <%= f.submit "会員登録" ,class:"register-bronze-btn" %>
     </div>
-    <div class='root-path'>
-      <%= link_to '戻る', root_path, class: "root-path-tag"%>
-    </div>
+    <%= link_to root_path, class:'root-path' do %>
+    <button>戻る</button>
+    <% end %>
   </div>
 </div>
 <% end %>

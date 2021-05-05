@@ -4,9 +4,12 @@
     <h1 class="title-bar-main-content">ログイン</h1>
   </div>
 </div>
-<%= form_with url: new_consignment_side_user_session_path, class: 'sessions-main', local: true do |f| %>
+<%= form_with model: @consignment_side_user, url: consignment_side_user_session_path, class: 'sessions-main', local: true do |f| %>
 <div class='form-wrap'>
-    <%#= render 'shared/error_messages', model: f.object %>
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
   <div class="form-group">
     <p class="warning-note">※会社をお探しの方</p>
     <div class='form-text-wrap'>
@@ -37,10 +40,10 @@
     <div class='register-btn'>
       <%= f.submit "ログイン" ,class:"register-bronze-btn" %>
     </div>
-    <div class='root-path'>
-      <%= link_to '戻る', root_path, class: "root-path-tag"%>
-    </div>
+    <%= link_to root_path, class:'root-path' do %>
+    <button>戻る</button>
+    <% end %>
   </div>
-</div>
 <% end %>
+</div>
 <%= render "shared/footer" %>

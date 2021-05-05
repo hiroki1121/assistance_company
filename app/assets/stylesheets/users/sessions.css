@@ -15,6 +15,13 @@
   align-items: center;
 }
 
+.login-flash-message {
+  color: red;
+  font-size: 18px;
+  padding-top: 30px;
+  padding-left: 170px;
+}
+
 .warning-note {
   margin: 10px 0;
   text-align: center;

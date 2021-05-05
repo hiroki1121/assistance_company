@@ -3,6 +3,14 @@
   background-color: #f7f7f7; 
 }
 
+.favorite-title-text {
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
 .favorite-list {
   display: flex;
   align-items: center;

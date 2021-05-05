@@ -4,16 +4,40 @@
     <p class="page-title-bottom">協力会社検索サイト</p>
   </div>
   <div class='right-header'>
-    <ul class='lists-right'>
-      <%# if user_signed_in? %>
+    <% if consignment_side_user_signed_in? %>
+      <ul class='lists-right'>
+        <li><%= link_to "#{current_consignment_side_user.last_name} #{current_consignment_side_user.first_name}さん", favorite_path(current_consignment_side_user.id), class: "header-link" %> </li> 
         <li><%= link_to '投稿する', new_post_path, class: "header-link" %> </li> 
+        <li><%= link_to 'ログアウト', destroy_consignment_side_user_session_path, method: :delete, class: "header-link" %></li>
+      </ul>
+    <% elsif contracted_side_user_signed_in? %>
+      <ul class='lists-right'>
+        <li><%= link_to "#{current_contracted_side_user.last_name} #{current_contracted_side_user.first_name}さん", favorite_path(current_contracted_side_user.id), class: "header-link" %> </li> 
         <li><%= link_to 'お気に入り', "#", class: "header-link" %></li>
-      <%# else %>
-        <li><%= link_to '会社をお探しの方新規登録', new_consignment_side_user_registration_path, class: "header-link" %></li>
-        <li><%= link_to '会社を掲載したい方新規登録', new_contracted_side_user_registration_path, class: "header-link" %></li>
-        <li><%= link_to 'ログイン', '#', class: "header-link" %></li>
-      <%# end %>
-    </ul>
+        <li><%= link_to 'ログアウト', destroy_contracted_side_user_session_path, method: :delete, class: "header-link" %></li>
+      </ul>
+    <% else %>
+      <div class="user-management-feature">
+        <div class="user-management-wrap", style="border-left: 1px solid #000000;">
+          <p class="user-category">会社をお探しの方</p>
+          <div class="user-management-bar">
+          <ul class='user-management-lists-right'>
+            <li><%= link_to '新規登録', new_consignment_side_user_registration_path, class: "header-link" %></li>
+            <li><%= link_to 'ログイン', new_consignment_side_user_session_path, class: "header-link" %></li>
+          </ul>
+          </div>
+        </div>
+        <div class="user-management-wrap">
+          <p class="user-category">会社を掲載したい方</p>
+          <div class="user-management-bar">
+            <ul class='user-management-lists-right'>
+              <li><%= link_to '新規登録', new_contracted_side_user_registration_path, class: "header-link" %></li>
+              <li><%= link_to 'ログイン', new_contracted_side_user_session_path, class: "header-link" %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </header>
 

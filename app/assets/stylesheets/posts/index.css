@@ -80,12 +80,8 @@ body {
   background-color: #ffffff;
   padding: 20px;
   margin: 50px 0;
-  border-top-color: #ffba75;
-  border-top-width: 10px;
-  border-top-style: double;
-  border-bottom-color: #ffba75;
-  border-bottom-width: 10px;
-  border-bottom-style: double;
+  border-top: 10px double #ffba75;
+  border-bottom: 10px double #ffba75;
   display: flex;
   align-items: center;
 }

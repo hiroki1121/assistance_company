@@ -105,9 +105,9 @@
           <div class='register-btn'>
             <%= f.submit "登録する" ,class:"register-bronze-btn" %>
           </div>
-          <div class='root-path'>
-            <%= link_to '戻る', root_path, class: "root-path-tag"%>
-          </div>
+          <%= link_to root_path, class:'root-path' do %>
+            <button>戻る</button>
+          <% end %>
         </div>
       <% end %>
     </div>

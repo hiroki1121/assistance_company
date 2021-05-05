@@ -25,8 +25,39 @@
   display: flex;
 }
 
+.user-management-feature {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.user-management-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #000000;
+}
+
+.user-management-lists-right {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.user-category {
+  margin: 5px 0;
+}
+
+.user-management-bar {
+  margin: 5px 0;
+}
+
 .header-link {
   text-decoration: none;
   color: black;
   margin: 0 15px;
+}
+
+li {
+  list-style: none;
 }
