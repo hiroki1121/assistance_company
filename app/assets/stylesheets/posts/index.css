@@ -4,6 +4,7 @@ body {
 
 /* 背景画像 */
 .back-img {
+  background-color: #f7f7f7;
   background-image: url("https://cdn.pixabay.com/photo/2019/12/17/17/09/woman-4702060_1280.jpg");
   background-size: 100vw;
   background-repeat: no-repeat
@@ -28,7 +29,7 @@ body {
 
 /* 検索バー */
 .search-bar {
-  margin-top: 280px;
+  margin-top: 300px;
 }
 
 .search-form {
@@ -53,28 +54,69 @@ body {
 }
 
 /* 会社一覧 */
-.company-lists {
-  margin-top: 30px;
-}
-
-.company-lists-title {
-  margin-left: 280px;
-}
-
-.company-list {
-  width: 60vw;
+.title-bar-main {
+  background-color: #eaf4ff;
+  height: 200px;
+  padding: 100px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #b1b1b1;
-  padding: 0px;
-  margin-left: 280px;
+  margin-top: 30px;
+}
+
+.title-bar-main-content {
+  font-family: osaka;
+}
+
+.company-lists {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-list {
+  width: 1000px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 50px 0;
+  border-top-color: #ffba75;
+  border-top-width: 10px;
+  border-top-style: double;
+  border-bottom-color: #ffba75;
+  border-bottom-width: 10px;
+  border-bottom-style: double;
+  display: flex;
+  align-items: center;
 }
 
 .company-img {
   width: 300px;
+  margin: 10px;
 }
 
-.company-content-info {
+.company-info-items {
+  width: 150px;
+  text-align: center;
+  padding: 0;
+}
+
+.company-info-item {
+  list-style: none;
+  padding: 10px;
+}
+
+.company-info-contents {
+  font-size: 18px;
   font-family: Hiragino Mincho ProN;
+  display: flex;
+}
+
+.company-info-content {
+  width: 500px;
+  overflow-wrap: normal;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 0;
+  list-style: none;
 }

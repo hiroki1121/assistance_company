@@ -1,4 +1,11 @@
-/* contrations.cssと同じ */
+/* sessionsと重複 */
+/* posts/new.cssと重複 */
+
+.registration-title {
+  padding: 20px 0;
+  background-color: #f7f7f7;
+}
+
 .registration-main {
   width: 100%;
   min-width: 800px;
@@ -11,6 +18,7 @@
 .form-wrap {
   width: 50%;
   background-color: #ffffff;
+  margin-bottom: 15px;
 }
 
 .form-header-text {
@@ -26,13 +34,20 @@
   margin: 0 auto;
 }
 
+.warning-note {
+  color: red;
+}
+
 .form-text-wrap {
   width: 100%;
   height: 20%;
 }
 
 .indispensable {
-  color: red;
+  color: #ffffff;
+  background-color: red;
+  padding: 2px;
+  border-radius: 2px;
 }
 
 .input-name-wrap {
@@ -78,11 +93,11 @@
   margin: 20px auto;
 }
 
-.register-red-btn {
+.register-bronze-btn {
   width: 150px;
-  background: #ffa3a3;
-  border: 1px solid #ffa3a3;
-  color: #fff;
+  color: #ffffff;
+  background: #ac6b25;
+  border: 1px solid #ac6b25;
   line-height: 30px;
   font-size: 14px;
   cursor: pointer;
@@ -90,8 +105,8 @@
 
 .root-path {
   width: 150px;
-  background: #ffa3a3;
-  border: 1px solid #ffa3a3;
+  background: #ffffff;
+  border: 1px solid #ac6b25;
   line-height: 30px;
   cursor: pointer;
   text-align: center;
@@ -100,6 +115,6 @@
 
 .root-path a {
   font-size: 14px;
-  color: #fff;
+  color: #ac6b25;
   text-decoration: none;
 }

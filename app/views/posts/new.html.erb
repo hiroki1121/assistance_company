@@ -1,0 +1,116 @@
+<%= render "shared/header" %>
+<div class="posts-title">
+  <div class="title-bar-main">
+    <h1 class="title-bar-main-content">投稿欄</h1>
+  </div>
+</div>
+<div class="company-post-main">
+  <div class="form-wrap">
+    <div class="form-header">
+      <%= form_with(model: @post, local: true) do |f|%>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">イメージ写真</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.file_field :image, class:"image-select"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">会社名</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :company_name, class:"input-default", placeholder: "例）○○株式会社"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">郵便番号</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :post_code, class:"input-default", placeholder: "例）123-4567"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">都道府県</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%# ダミー %>
+          <%= f.text_field :prefecture_id, class:"input-default", placeholder: ""%>
+          <%#= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">住所</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :address, class:"input-default", placeholder: "例)○○市△△ 1-2-3"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">建物名</label>
+            <span class="optional">任意</span>
+          </div>
+          <%= f.text_field :building_name, class:"input-default", placeholder: "例）〇〇ビル"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">従業員数（人）</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :employee_number, class:"input-default", placeholder: "半角数字を入力"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">部署（部・課）</label>
+            <span class="optional">任意</span>
+          </div>
+          <%= f.text_field :division ,class:"input-default", placeholder: "例）〇〇部△△課"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">代表者名</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :representative_name, class:"input-default", placeholder: "例）山田太郎"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">アドレス</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :email, class:"input-default", placeholder: "例）account@domain.com"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">電話番号（代表）</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :represent_phone_number, class:"input-default", placeholder: "電話番号（ハイフンなし）"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">電話番号（直通）</label>
+            <span class="optional">任意</span>
+          </div>
+          <%= f.text_field :direct_phone_number, class:"input-default", placeholder: "電話番号（ハイフンなし）"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">会社概要</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :business_detail, class:"input-detail", placeholder: "会社概要を記入（500文字まで）事業内容やこれまでの実績など",rows:"7" ,maxlength:"500"%>
+        </div>
+        <div class='form-btn'>
+          <div class='register-btn'>
+            <%= f.submit "登録する" ,class:"register-bronze-btn" %>
+          </div>
+          <div class='root-path'>
+            <%= link_to '戻る', root_path, class: "root-path-tag"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

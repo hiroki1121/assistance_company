@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_02_060802) do
+ActiveRecord::Schema.define(version: 2021_05_04_120546) do
 
   create_table "consignment_side_users", charset: "utf8", force: :cascade do |t|
     t.string "last_name", null: false
@@ -46,4 +46,35 @@ ActiveRecord::Schema.define(version: 2021_05_02_060802) do
     t.index ["reset_password_token"], name: "index_contracted_side_users_on_reset_password_token", unique: true
   end
 
+  create_table "favorites", charset: "utf8", force: :cascade do |t|
+    t.bigint "consignment_side_user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["consignment_side_user_id"], name: "index_favorites_on_consignment_side_user_id"
+    t.index ["post_id"], name: "index_favorites_on_post_id"
+  end
+
+  create_table "posts", charset: "utf8", force: :cascade do |t|
+    t.string "company_name", null: false
+    t.string "post_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "address", null: false
+    t.string "building_name"
+    t.integer "employee_number", null: false
+    t.string "division"
+    t.string "representative_name", null: false
+    t.string "email", null: false
+    t.string "represent_phone_number", null: false
+    t.string "direct_phone_number"
+    t.text "business_detail", null: false
+    t.bigint "contracted_side_user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contracted_side_user_id"], name: "index_posts_on_contracted_side_user_id"
+  end
+
+  add_foreign_key "favorites", "consignment_side_users"
+  add_foreign_key "favorites", "posts"
+  add_foreign_key "posts", "contracted_side_users"
 end

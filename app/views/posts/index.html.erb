@@ -1,9 +1,9 @@
 <%# 背景画像 %>
-<div class='back-img'>
+<div class="back-img">
 <%= render "shared/header" %>
 <body>
 <%# 画像上文字列 %>
-  <div class='app-description'>
+  <div class="app-description">
     <p class="description-text">Assistance Companyとは...</p>
     <p class="description-text">・外注したいけど、どこに頼んでいいか分からない</p>
     <p class="description-text">・自社の情報をもっと発信したい</p>
@@ -12,32 +12,38 @@
   </div>
 
   <%# 検索バー %>
-  <div class='search-bar'>
+  <div class="search-bar">
     <form class="search-form" action="#">
-      <input class='input-box' placeholder='フリーワードを記入 (ex.東京都,設計)'>
+      <input class="input-box" placeholder='フリーワードを記入 (ex.東京都,設計)'>
       <button class="search-button">検索する</button>
     </form>
   </div>
 <%# 会社一覧 %>
-  <div class='company-lists'>
-    <h1 class='company-lists-title'>会社一覧</h1>
-    <div class='company-list'>
-      <div class='company-content-img'>
-        <%= image_tag 'company-image.jpg', class: "company-img" %>
-      </div>
-      <div class='company-content-info'>
-        <h3 class='company-name'>
-          会 社 名：HOGEコンサルタント株式会社
-        </h3>
-        <h3 class='company-prefecture'>
-          所 在 地：東京都
-        </h3>
-        <h3 class='company-business-detail'>
-          業務内容：建設コンサルタント会社です。道路設計ができます！
-        </h3>
+    <div class="title-bar-main">
+      <h1 class="title-bar-main-content">会社一覧</h1>
+    </div>
+  <%#= link_to post_path(post.id) do %>
+    <div class="company-lists">
+      <div class="company-list">
+        <div class="company-content-img">
+          <%= image_tag "company-image.jpg", class: "company-img" %>
+        </div>
+        <div class="company-info-contents">
+          <ul class="company-info-items">
+            <li class="company-info-item">会 社 名</li>
+            <li class="company-info-item">所 在 地</li>
+            <li class="company-info-item">業務内容</li>
+          </ul>
+          <%# 未投稿時の表示 %>
+          <ul class="company-info-content">
+            <li class="input-content">HOGE株式会社</li>
+            <li class="input-content">東京都</li>
+            <li class="input-content">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  <%# end %>
 </body>
 </div>
 <%= render "shared/footer" %>

@@ -1,0 +1,18 @@
+/* その他はposts/index.cssと同様 */
+.delete-btn-form {
+  background-color: #f7f7f7; 
+}
+
+.favorite-list {
+  display: flex;
+  align-items: center;
+}
+
+.delete-btn-form {
+  padding-left: 30px;
+}
+
+i {
+  font-size: 20px;
+  color: #888888;
+}

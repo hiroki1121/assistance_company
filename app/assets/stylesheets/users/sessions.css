@@ -1,0 +1,27 @@
+/* その他はregistrationsと同様 */
+
+.sesions-title {
+  padding: 20px 0;
+  background-color: #f7f7f7;
+}
+
+.sessions-main {
+  width: 100%;
+  min-width: 800px;
+  height: 500px;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warning-note {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.forget-id {
+  color: blue;
+  font-size: 15px;
+  text-decoration: none;
+}

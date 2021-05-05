@@ -6,8 +6,8 @@
   <div class='right-header'>
     <ul class='lists-right'>
       <%# if user_signed_in? %>
-        <li><%= link_to 'お気に入り', "#", class: "header-link" %> </li> 
-        <li><%= link_to 'マイページ', "#", class: "header-link" %></li>
+        <li><%= link_to '投稿する', new_post_path, class: "header-link" %> </li> 
+        <li><%= link_to 'お気に入り', "#", class: "header-link" %></li>
       <%# else %>
         <li><%= link_to '会社をお探しの方新規登録', new_consignment_side_user_registration_path, class: "header-link" %></li>
         <li><%= link_to '会社を掲載したい方新規登録', new_contracted_side_user_registration_path, class: "header-link" %></li>

@@ -1,5 +1,6 @@
 .top-page-header {
   height: 70px;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;

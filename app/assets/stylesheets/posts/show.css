@@ -1,0 +1,81 @@
+/* 会社詳細 */
+.show-main {
+  height: 100vh;
+}
+
+.company-information-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #f7f7f7;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.company-information-wrap {
+  background-color: #ffffff;
+}
+
+.company-show-list {
+  width: 1200px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-show-img {
+  width: 400px;
+  margin: 10px;
+}
+
+.company-show-info-items {
+  width: 200px;
+  padding: 0;
+}
+
+.company-show-info-item {
+  padding: 10px;
+  text-align-last: justify;
+  text-justify: inter-ideograph;
+}
+
+.company-show-info-contents {
+  font-family: Hiragino Mincho ProN;
+  display: flex;
+  padding: 0;
+}
+.input-content {
+  padding: 10px;
+  text-align: left;
+}
+
+.show-btn-form {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.favorite-btn {
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #ffa54c;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.edit-path-btn {
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #ffa54c;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
