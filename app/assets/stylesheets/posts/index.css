@@ -70,9 +70,10 @@ body {
 
 .company-lists {
   margin-top: 20px;
+  margin-left: calc(50vw - 520px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .company-list {

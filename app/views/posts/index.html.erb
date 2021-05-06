@@ -24,9 +24,13 @@
     </div>
   <%#= link_to post_path(post.id) do %>
     <div class="company-lists">
+    <% @posts.each do |post| %>
       <div class="company-list">
         <div class="company-content-img">
+          <% if @posts.empty? %>
           <%= image_tag "company-image.jpg", class: "company-img" %>
+          <% end %>
+          <%= image_tag post.image, class: "company-img" %>
         </div>
         <div class="company-info-contents">
           <ul class="company-info-items">
@@ -34,14 +38,22 @@
             <li class="company-info-item">所 在 地</li>
             <li class="company-info-item">業務内容</li>
           </ul>
-          <%# 未投稿時の表示 %>
           <ul class="company-info-content">
-            <li class="input-content">HOGE株式会社</li>
-            <li class="input-content">東京都</li>
-            <li class="input-content">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
+            <li class="input-content"><%= post.company_name %></li>
+            <li class="input-content"><%= post.prefecture.name %></li>
+            <li class="input-content"><%= post.business_detail %></li>
           </ul>
+          <%# 未投稿時の表示 %>
+          <% if @posts.empty? %>
+            <ul class="company-info-content">
+              <li class="input-content">HOGE株式会社</li>
+              <li class="input-content">東京都</li>
+              <li class="input-content">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
+            </ul>
+          <% end %>
         </div>
       </div>
+    <% end %>
     </div>
   <%# end %>
 </body>

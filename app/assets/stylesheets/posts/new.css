@@ -25,6 +25,15 @@
   margin-top: 15px;
 }
 
+.select-box {
+  height: 30px;
+  width: 400px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
 .input-detail {
   width: 100%;
   margin-top: 5px;
