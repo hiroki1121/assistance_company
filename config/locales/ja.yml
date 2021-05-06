@@ -17,4 +17,17 @@ ja:
         first_name: お名前（名）
         last_name_ruby: お名前カナ（姓）
         first_name_ruby: お名前カナ（名）
-
+      post:
+        image: イメージ写真
+        company_name: 会社名
+        post_code: 郵便番号
+        prefecture_id: 都道府県
+        address: 住所
+        building_name: 建物名
+        employee_number: 従業員数
+        division: 部署
+        representative_name: 代表者名
+        email: メールアドレス
+        represent_phone_number: 電話番号（代表）
+        direct_phone_number: 電話番号（直通）
+        business_detail: 会社概要
