@@ -138,17 +138,17 @@ RSpec.describe ConsignmentSideUser, type: :model do
       expect(@consignment_side_user.errors.full_messages).to include('電話番号を入力してください')
     end
     it '電話番号は、10桁又は11桁であること(9桁の場合)' do
-      @consignment_side_user.phone_number = 123456789
+      @consignment_side_user.phone_number = 123_456_789
       @consignment_side_user.valid?
       expect(@consignment_side_user.errors.full_messages).to include('電話番号を正しく入力してください')
     end
     it '電話番号は、10桁又は11桁であること(12桁の場合)' do
-      @consignment_side_user.phone_number = 123456789123
+      @consignment_side_user.phone_number = 123_456_789_123
       @consignment_side_user.valid?
       expect(@consignment_side_user.errors.full_messages).to include('電話番号を正しく入力してください')
     end
     it '電話番号は、(-)ハイフンを入力しないこと' do
-      @consignment_side_user.phone_number = 012-345-6789
+      @consignment_side_user.phone_number = 123 - 456 - 7891
       @consignment_side_user.valid?
       expect(@consignment_side_user.errors.full_messages).to include('電話番号を正しく入力してください')
     end
