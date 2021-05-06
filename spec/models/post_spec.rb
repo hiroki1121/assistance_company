@@ -84,7 +84,7 @@ RSpec.describe Post, type: :model do
         expect(@post.errors.full_messages).to include('電話番号（代表）を正しく入力してください')
       end
       it '会社情報として、電話番号（代表）は(-)ハイフンを入力しないこと' do
-        @post.represent_phone_number = 123-456-7891
+        @post.represent_phone_number = 123 - 456 - 7891
         @post.valid?
         expect(@post.errors.full_messages).to include('電話番号（代表）を正しく入力してください')
       end
@@ -114,7 +114,7 @@ RSpec.describe Post, type: :model do
         expect(@post.errors.full_messages).to include('電話番号（直通）を正しく入力してください')
       end
       it '会社情報として、電話番号（直通）は(-)ハイフンを入力しないこと' do
-        @post.direct_phone_number = 123-456-7891
+        @post.direct_phone_number = 123 - 456 - 7891
         @post.valid?
         expect(@post.errors.full_messages).to include('電話番号（直通）を正しく入力してください')
       end
