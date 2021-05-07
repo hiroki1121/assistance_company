@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_030330) do
     t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["consignment_side_user_id", "post_id"], name: "index_favorites_on_consignment_side_user_id_and_post_id", unique: true
     t.index ["consignment_side_user_id"], name: "index_favorites_on_consignment_side_user_id"
     t.index ["post_id"], name: "index_favorites_on_post_id"
   end
