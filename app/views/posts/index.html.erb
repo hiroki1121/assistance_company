@@ -23,13 +23,33 @@
     <h1 class="title-bar-main-content">会社一覧</h1>
   </div>
   <div class="company-lists">
+    <%# 投稿内容がない場合 %>
+    <%= link_to "#" do %>
+      <% if @posts.empty? %>
+        <div class="company-list">
+          <div class="company-content-img">
+            <%= image_tag "company-image.jpg", class: "company-img" %>
+          </div>
+          <div class="company-info-contents">
+            <ul class="company-info-items">
+              <li class="company-info-item">会 社 名</li>
+              <li class="company-info-item">所 在 地</li>
+              <li class="company-info-item">会社概要</li>
+            </ul>
+            <ul class="company-info-content">
+              <li class="input-content">HOGE株式会社</li>
+              <li class="input-content">東京都</li>
+              <li class="input-content">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <%# 投稿内容がある場合 %>
   <% @posts.each do |post| %>
     <%= link_to post_path(post.id) do %>
       <div class="company-list">
         <div class="company-content-img">
-          <% if @posts.empty? %>
-          <%= image_tag "company-image.jpg", class: "company-img" %>
-          <% end %>
           <%= image_tag post.image, class: "company-img" %>
         </div>
         <div class="company-info-contents">
@@ -38,14 +58,6 @@
             <li class="company-info-item">所 在 地</li>
             <li class="company-info-item">会社概要</li>
           </ul>
-          <%# 未投稿時の表示 %>
-          <% if @posts.empty? %>
-            <ul class="company-info-content">
-              <li class="input-content">HOGE株式会社</li>
-              <li class="input-content">東京都</li>
-              <li class="input-content">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
-            </ul>
-          <% end %>
           <ul class="company-info-content">
             <li class="input-content"><%= post.company_name %></li>
             <li class="input-content"><%= post.prefecture.name %></li>
