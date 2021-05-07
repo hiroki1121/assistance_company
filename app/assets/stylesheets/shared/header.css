@@ -1,4 +1,5 @@
 .top-page-header {
+  width: 100vw;
   height: 70px;
   background-color: transparent;
   display: flex;

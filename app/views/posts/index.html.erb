@@ -1,7 +1,6 @@
 <%# 背景画像 %>
 <div class="back-img">
 <%= render "shared/header" %>
-<body>
 <%# 画像上文字列 %>
   <div class="app-description">
     <p class="description-text">Assistance Companyとは...</p>
@@ -10,7 +9,8 @@
     <p class="description-text">そんな方にオススメのサービスです！</p>
     <p class="app-title-script">New encounter</p>
   </div>
-
+</div>
+<body>
   <%# 検索バー %>
   <div class="search-bar">
     <form class="search-form" action="#">
@@ -36,7 +36,7 @@
           <ul class="company-info-items">
             <li class="company-info-item">会 社 名</li>
             <li class="company-info-item">所 在 地</li>
-            <li class="company-info-item">業務内容</li>
+            <li class="company-info-item">会社概要</li>
           </ul>
           <ul class="company-info-content">
             <li class="input-content"><%= post.company_name %></li>
@@ -57,5 +57,4 @@
     </div>
   <%# end %>
 </body>
-</div>
 <%= render "shared/footer" %>
