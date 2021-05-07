@@ -23,5 +23,6 @@ class Post < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+  has_many :favorite
 end
 

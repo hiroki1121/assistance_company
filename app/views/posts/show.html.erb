@@ -22,9 +22,10 @@
             <li class="company-show-info-item">メールアドレス</li>
             <li class="company-show-info-item">電話番号（代表）</li>
             <li class="company-show-info-item">電話番号（直通）</li>
-            <li class="company-show-info-item">会社概要：</li>
+            <li class="company-show-info-item">会社概要</li>
           </ul>
           <%# 未投稿時の表示 %>
+          <% if @post.nil? %>
           <ul class="company-info-content">
             <li class="input-content", id="company-name">HOGE株式会社</li>
             <li class="input-content", id="prefecture">東京都</li>
@@ -36,20 +37,52 @@
             <li class="input-content", id="email">sample@hoge.com</li>
             <li class="input-content", id="represent_phone_number">1234567891</li>
             <li class="input-content", id="direct_phone_number">1234567898</li>
-        
             <li class="input-content", id="business_detail">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
+          </ul>
+          <% end %>
+          <ul class="company-info-content">
+            <li class="input-content", id="company-name"><%= @post.company_name %></li>
+            <li class="input-content", id="prefecture"><%= @post.prefecture.name%></li>
+            <li class="input-content", id="address"><%= @post.address %></li>
+            <li class="input-content", id="building_name">
+              <% if @post.building_name.empty? %>
+                <p class="blank-input">未入力</p>
+              <% else %>
+                <%= @post.building_name %>
+              <% end %>
+            </li>
+            <li class="input-content", id="employee_number"><%= @post.employee_number %></li>
+            <li class="input-content", id="division">
+              <% if @post.division.empty? %>
+                <p class="blank-input">未入力</p>
+              <% else %>
+                <%= @post.division %>
+              <% end %>
+            </li>
+            <li class="input-content", id="representative_name"><%= @post.representative_name %></li>
+            <li class="input-content", id="email"><%= @post.email %></li>
+            <li class="input-content", id="represent_phone_number"><%= @post.represent_phone_number %></li>
+            <li class="input-content", id="direct_phone_number">
+              <% if @post.direct_phone_number.empty? %>
+                <p class="blank-input">未入力</p>
+              <% else %>
+                <%= @post.direct_phone_number %>
+              <% end %>
+            </li>
+            <li class="input-content", id="business_detail"><%= @post.business_detail %></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
   <div class="show-btn-form">
-    <%= form_with(model: @post, local: true) do |f|%>
-      <%# if contracted_side_user.id == current_user.id && user_signed_in? %>
+    <%= form_with(model: @post, class:"favorite-btn-form", local: true) do |f|%>
+      <% if contracted_side_user_signed_in? %>
         <%= link_to "編集する", edit_post_path, method: :get, class: "edit-path-btn" %>
-      <%# else %>
-        <%= f.submit "お気に入り登録" ,class:"favorite-btn" %>
-      <%# end %>
+      <% elsif consignment_side_user_signed_in? %>
+          <%= f.submit "お気に入り登録" ,class:"favorite-btn" %>
+          <p class="favorite-registered-btn">お気に入り済み</p>
+      <% else %>
     <% end%>
   </div>
 <div>

@@ -6,13 +6,13 @@
   <div class='right-header'>
     <% if consignment_side_user_signed_in? %>
       <ul class='lists-right'>
-        <li><%= link_to "#{current_consignment_side_user.last_name} #{current_consignment_side_user.first_name}さん", favorite_path(current_consignment_side_user.id), class: "header-link" %> </li> 
+        <li><%= link_to "#{current_consignment_side_user.last_name} #{current_consignment_side_user.first_name}さん", consignment_side_user_path(current_consignment_side_user.id), class: "header-link" %> </li> 
         <li><%= link_to 'お気に入り', "#", class: "header-link" %></li>
         <li><%= link_to 'ログアウト', destroy_consignment_side_user_session_path, method: :delete, class: "header-link" %></li>
       </ul>
     <% elsif contracted_side_user_signed_in? %>
       <ul class='lists-right'>
-        <li><%= link_to "#{current_contracted_side_user.last_name} #{current_contracted_side_user.first_name}さん", favorite_path(current_contracted_side_user.id), class: "header-link" %> </li> 
+        <li><%= link_to "#{current_contracted_side_user.last_name} #{current_contracted_side_user.first_name}さん", root_path(current_contracted_side_user.id), class: "header-link" %> </li> 
         <li><%= link_to '投稿する', new_post_path, class: "header-link" %> </li> 
         <li><%= link_to 'ログアウト', destroy_contracted_side_user_session_path, method: :delete, class: "header-link" %></li>
       </ul>

@@ -32,7 +32,8 @@
 
 .company-show-info-items {
   width: 200px;
-  padding: 0;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 .company-show-info-item {
@@ -45,15 +46,27 @@
   font-family: Hiragino Mincho ProN;
   display: flex;
   padding: 0;
+  margin: 10px 0;
 }
 .input-content {
   padding: 10px;
   text-align: left;
 }
 
+.blank-input {
+  color: #c5c5c5;
+  margin: 0;
+  text-align: left;
+}
+
 .show-btn-form {
-  text-align: center;
   margin: 20px auto;
+}
+
+.favorite-btn-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .favorite-btn {
@@ -75,6 +88,16 @@
   background-color: #ffa54c;
   border: none;
   border-radius: 4px;
-  padding: 20px 60px;
+  padding: 18.5px 50px;
+  cursor: pointer;
+}
+
+.favorite-registered-btn {
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #cacaca;
+  border: none;
+  border-radius: 4px;
+  padding: 18.5px 50px;
   cursor: pointer;
 }

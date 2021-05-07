@@ -97,6 +97,10 @@ body {
   margin: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .company-info-items {
   width: 150px;
   text-align: center;
@@ -104,6 +108,7 @@ body {
 }
 
 .company-info-item {
+  color: black;
   list-style: none;
   padding: 10px;
 }
@@ -121,4 +126,8 @@ body {
   padding: 10px;
   margin: 10px 0;
   list-style: none;
+}
+
+.input-content {
+  color: black;
 }
