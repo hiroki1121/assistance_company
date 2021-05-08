@@ -19,6 +19,16 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
+  end
+  
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to post_favorites_path(@post.id)
+    else
+      render :edit
+    end
   end
 
   def favirites
@@ -38,5 +48,4 @@ end
 
 def authenticate_any!
   redirect_to contracted_side_user_session_path unless contracted_side_user_signed_in?
-  redirect_to consignment_side_user_session_path unless consignment_side_user_signed_in?
 end

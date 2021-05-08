@@ -1,0 +1,26 @@
+.edit-bronze-btn {
+  width: 150px;
+  color: #ffffff;
+  background: #ac6b25;
+  margin-right: 10px;
+  border: 1px solid #ac6b25;
+  line-height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.post-delete-btn {
+  width: 150px;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 10px;
+  background-color: #aaaaaa;
+  border: none;
+  line-height: 34px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+a {
+  display: block;
+}

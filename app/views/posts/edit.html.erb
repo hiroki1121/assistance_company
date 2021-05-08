@@ -34,9 +34,7 @@
             <label class="form-text">都道府県</label>
             <span class="indispensable">必須</span>
           </div>
-          <%# ダミー %>
-          <%= f.text_field :prefecture_id, class:"input-default", placeholder: ""%>
-          <%#= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
         </div>
         <div class="form-group">
           <div class='form-text-wrap'>
@@ -103,11 +101,10 @@
         </div>
         <div class='form-btn'>
           <div class='register-btn'>
-            <%= f.submit "変更する" ,class:"register-bronze-btn" %>
+            <%= f.submit "変更する" ,class:"edit-bronze-btn" %>
           </div>
-          <div class='root-path'>
-            <%# パスをshowアクションに変更する %>
-            <%= link_to '戻る', root_path, class: "root-path-tag"%>
+          <div class='edit-root-path'>
+            <%= link_to '削除する', root_path, class: "post-delete-btn"%>
           </div>
         </div>
       <% end %>
