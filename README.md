@@ -13,6 +13,7 @@
 
 ### Association
 - has_many :favorites
+- has_many :posts, through: :favorites
 
 
 ## contracted_side_usersテーブル
@@ -50,7 +51,8 @@
 
 ### Association
 - belongs_to :contracted_side_user
-- has_many :favorite
+- has_many :favorites
+- has_many :consignment_side_users, through: :favorites
 
 
 ## favoritesテーブル

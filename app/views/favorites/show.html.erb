@@ -8,7 +8,10 @@
     <div class="company-information-wrap">
       <div class="company-show-list">
         <div class="company-show-content-img">
-          <%= image_tag "company-image.jpg", class: "company-show-img" %>
+          <% if @post.nil? %>
+            <%= image_tag "company-image.jpg", class: "company-show-img" %>
+          <% end %>
+          <%= image_tag @post.image, class: "company-show-img" %>
         </div>
         <div class="company-show-info-contents">
           <ul class="company-show-info-items">
@@ -76,14 +79,15 @@
     </div>
   </div>
   <div class="show-btn-form">
-    <%= form_with(model: @post, class:"favorite-btn-form", local: true) do |f|%>
-      <% if contracted_side_user_signed_in? %>
-        <%= link_to "編集する", edit_post_path, method: :get, class: "edit-path-btn" %>
-      <% elsif consignment_side_user_signed_in? %>
-          <%= f.submit "お気に入り登録" ,class:"favorite-btn" %>
-          <p class="favorite-registered-btn">お気に入り済み</p>
+    <% if contracted_side_user_signed_in? %>
+      <%= link_to "編集する", edit_post_path(@post), method: :get, class: "edit-path-btn" %>
+    <% else %>
+      <% if !Favorite.exists?(consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id) %>
+        <%= link_to "お気に入り", post_favorites_path(@post), method: :post, class:"favorite-btn" %>
       <% else %>
-    <% end%>
+        <%= link_to "お気に入り解除", post_favorites_path(@post), method: :delete, class:"favorite-release-btn" %>
+      <% end %>
+    <% end %>
   </div>
 <div>
 <%= render "shared/footer" %>

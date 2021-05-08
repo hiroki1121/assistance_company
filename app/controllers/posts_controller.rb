@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_any!, except: [:index, :show]
+  before_action :authenticate_any!, except: [:index]
 
   def index
     @posts = Post.order('created_at DESC')
@@ -18,11 +18,11 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    @post = Post.find(params[:id])
+  def edit
   end
 
-  def edit
+  def favirites
+    @favirite = current_consignment_side_user.favirites_posts.includes(:consignment_side_user).order(created_at: :desc)
   end
 end
 
@@ -38,4 +38,5 @@ end
 
 def authenticate_any!
   redirect_to contracted_side_user_session_path unless contracted_side_user_signed_in?
+  redirect_to consignment_side_user_session_path unless consignment_side_user_signed_in?
 end
