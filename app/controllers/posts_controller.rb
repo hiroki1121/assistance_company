@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_any!, except: [:index]
+  before_action :set_post, only: [:create, :edit, :update, :destroy]
 
   def index
     @posts = Post.order('created_at DESC')
@@ -10,7 +11,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
     if @post.save
       redirect_to root_path
     else
@@ -19,16 +19,18 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
   
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_favorites_path(@post.id)
     else
       render :edit
     end
+  end
+
+  def destroy
+    redirect_to root_path if @post.destroy
   end
 
   def favirites
@@ -48,4 +50,8 @@ end
 
 def authenticate_any!
   redirect_to contracted_side_user_session_path unless contracted_side_user_signed_in?
+end
+
+def set_post
+  @post = Post.find(params[:id])
 end
