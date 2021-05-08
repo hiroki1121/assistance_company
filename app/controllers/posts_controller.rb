@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_any!, except: [:index]
-  before_action :set_post, only: [:create, :edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.order('created_at DESC')
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.create(post_params)
     if @post.save
       redirect_to root_path
     else
