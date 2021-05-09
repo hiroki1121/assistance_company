@@ -46,27 +46,27 @@
       <% end %>
     <% end %>
     <%# 投稿内容がある場合 %>
-  <% @posts.each do |post| %>
-    <%= link_to post_favorites_path(post.id) do %>
-      <div class="company-list">
-        <div class="company-content-img">
-          <%= image_tag post.image, class: "company-img" %>
+    <% @posts.each do |post| %>
+      <%= link_to post_favorites_path(post.id) do %>
+        <div class="company-list">
+          <div class="company-content-img">
+            <%= image_tag post.image, class: "company-img" %>
+          </div>
+          <div class="company-info-contents">
+            <ul class="company-info-items">
+              <li class="company-info-item">会 社 名</li>
+              <li class="company-info-item">所 在 地</li>
+              <li class="company-info-item">会社概要</li>
+            </ul>
+            <ul class="company-info-content">
+              <li class="input-content"><%= post.company_name %></li>
+              <li class="input-content"><%= post.prefecture.name %></li>
+              <li class="input-content"><%= post.business_detail %></li>
+            </ul>
+          </div>
         </div>
-        <div class="company-info-contents">
-          <ul class="company-info-items">
-            <li class="company-info-item">会 社 名</li>
-            <li class="company-info-item">所 在 地</li>
-            <li class="company-info-item">会社概要</li>
-          </ul>
-          <ul class="company-info-content">
-            <li class="input-content"><%= post.company_name %></li>
-            <li class="input-content"><%= post.prefecture.name %></li>
-            <li class="input-content"><%= post.business_detail %></li>
-          </ul>
-        </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
 </body>
 <%= render "shared/footer" %>

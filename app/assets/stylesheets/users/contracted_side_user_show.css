@@ -1,0 +1,10 @@
+.posted-delete-btn-form {
+  background-color: #f7f7f7; 
+  text-align: center;
+  margin: 20px auto;
+}
+
+.posted-delete-btn i {
+  font-size: 20px;
+  color: #888888;
+}

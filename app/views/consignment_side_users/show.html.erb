@@ -5,34 +5,59 @@
   </div>
 </div>
 <p class="favorite-title-text">お気に入り</p>
-  <%# each文を書く%>
-  <%#= link_to post_path(post.id) do %>
-    <div class="company-lists">
-      <div class="favorite-list">
-        <div class="company-list">
-          <div class="company-content-img">
-            <%= image_tag "company-image.jpg", class: "company-img" %>
-          </div>
-          <div class="company-info-contents">
-            <ul class="company-info-items">
-              <li class="company-info-item">会 社 名</li>
-              <li class="company-info-item">所 在 地</li>
-              <li class="company-info-item">業務内容</li>
-            </ul>
-            <%# 未投稿時の表示 %>
-            <ul class="company-info-content">
-              <li class="input-content">HOGE株式会社</li>
-              <li class="input-content">東京都</li>
-              <li class="input-content">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
-            </ul>
-          </div>
+<div class="company-lists">
+  <%# 投稿内容がない場合 %>
+  <% if @favorite.nil? %>
+    <div class="favorite-list">
+      <div class="company-list">
+        <div class="company-content-img">
+          <%= image_tag "company-image.jpg", class: "company-img" %>
         </div>
-        <div class="delete-btn-form">
-          <%= link_to "#", method: :delete, class:"delete-btn" do %>
-            <i class="far fa-trash-alt">削除する</i>
-          <% end %>
+        <div class="company-info-contents">
+          <ul class="company-info-items">
+            <li class="company-info-item">会 社 名</li>
+            <li class="company-info-item">所 在 地</li>
+            <li class="company-info-item">業務内容</li>
+          </ul>
+          <ul class="company-info-content">
+            <li class="input-content">HOGE株式会社</li>
+            <li class="input-content">東京都</li>
+            <li class="input-content">Webサービス設計会社です。大手企業からの案件多数引き受けております！</li>
+          </ul>
         </div>
       </div>
     </div>
-
+  <% end %>
+  <%# 投稿内容がある場合 %>
+  <% if @favorite.present? %>
+    <% @posts.each do |post| %>
+      <%= link_to post_favorites_path(post.id) do %>
+        <div class="favorite-list">
+          <div class="company-list">
+            <div class="company-content-img">
+              <%= image_tag post.image, class: "company-img" %>
+            </div>
+            <div class="company-info-contents">
+              <ul class="company-info-items">
+                <li class="company-info-item">会 社 名</li>
+                <li class="company-info-item">所 在 地</li>
+                <li class="company-info-item">業務内容</li>
+              </ul>
+              <ul class="company-info-content">
+                <li class="input-content"><%= post.company_name %></li>
+                <li class="input-content"><%= post.prefecture.name %></li>
+                <li class="input-content"><%= post.business_detail %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="delete-btn-form">
+            <%= link_to post_favorites_path(@favorite.post_id), method: :delete, class:"delete-btn" do %>
+              <i class="far fa-trash-alt">削除する</i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
 <%= render "shared/footer" %>
