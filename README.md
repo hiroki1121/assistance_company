@@ -35,7 +35,9 @@
 
 |Column                  |Type        |Options                         |
 |------------------------|------------|--------------------------------|
+| industry_id            | integer    | null: false                    |
 | company_name           | string     | null: false                    |
+| company_url            | string     |                                |
 | post_code              | string     | null: false                    |
 | prefecture_id          | integer    | null: false                    |
 | address                | string     | null: false                    |

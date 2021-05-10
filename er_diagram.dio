@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="FhERzdF4JKhjgUkXHHSx" name="ページ1">
-        <mxGraphModel dx="968" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="791" dy="399" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -20,10 +20,10 @@
                     <mxGeometry y="30" width="260" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="postsテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;labelBackgroundColor=none;fillColor=#FFFFFF;fontColor=#000000;labelBorderColor=none;swimlaneFillColor=none;strokeColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="480" y="257.5" width="260" height="235" as="geometry"/>
+                    <mxGeometry x="480" y="239.5" width="260" height="272.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="image(ActiveStrorageで実装)&#10;company_name(string型,NOT,NULL)&#10;post_code(string型,NOT,NULL)&#10;prefecture_id(integer型,NOT,NULL)&#10;address(string型NOT,NULL)&#10;building_name(string型)&#10;employlee_number(integer型,NOT,NULL)&#10;division(string型)&#10;representative_name(string型,NOT,NULL)&#10;email(srting型,NOT,NULL)&#10;represent_phone_number(string型,NOT,NULL)&#10;direct_phone_number(string型)&#10;business_detail(text型,NOT,NULL)&#10;contracted_side_user(references型)" style="align=left;strokeColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fillColor=#FFFFFF;fontColor=#000000;" parent="6" vertex="1">
-                    <mxGeometry y="30" width="260" height="205" as="geometry"/>
+                <mxCell id="7" value="image(ActiveStrorageで実装)&#10;industry_id(integer型,NOT,NULL)&#10;company_name(string型,NOT,NULL)&#10;company_url(string型)&#10;post_code(string型,NOT,NULL)&#10;prefecture_id(integer型,NOT,NULL)&#10;address(string型NOT,NULL)&#10;building_name(string型)&#10;employlee_number(integer型,NOT,NULL)&#10;division(string型)&#10;representative_name(string型,NOT,NULL)&#10;email(srting型,NOT,NULL)&#10;represent_phone_number(string型,NOT,NULL)&#10;direct_phone_number(string型)&#10;business_detail(text型,NOT,NULL)&#10;contracted_side_user(references型)" style="align=left;strokeColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fillColor=#FFFFFF;fontColor=#000000;" parent="6" vertex="1">
+                    <mxGeometry y="30" width="260" height="242.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="favoritesテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;labelBackgroundColor=none;fillColor=#FFFFFF;fontColor=#000000;labelBorderColor=none;swimlaneFillColor=none;strokeColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="40" y="310" width="260" height="130" as="geometry"/>

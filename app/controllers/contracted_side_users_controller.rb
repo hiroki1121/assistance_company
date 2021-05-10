@@ -7,6 +7,6 @@ class ContractedSideUsersController < ApplicationController
   private
 
   def authenticate_any!
-    redirect_to contracted_side_user_session_path unless contracted_side_user_signed_in?
+    redirect_to new_contracted_side_user_session_path unless contracted_side_user_signed_in?
   end
 end

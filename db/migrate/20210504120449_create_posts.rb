@@ -1,7 +1,9 @@
 class CreatePosts < ActiveRecord::Migration[6.1]
   def change
     create_table :posts do |t|
+      t.integer :industry_id, null: false
       t.string :company_name, null: false
+      t.string :company_url
       t.string :post_code, null: false
       t.integer :prefecture_id, null: false
       t.string :address, null: false

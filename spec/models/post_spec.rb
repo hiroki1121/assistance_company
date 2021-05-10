@@ -9,6 +9,10 @@ RSpec.describe Post, type: :model do
       it '必要な情報を適切に入力すると、投稿ができる' do
         expect(@post).to be_valid
       end
+      it 'URLが未入力でも、投稿ができる' do
+        @post.company_url = ''
+        expect(@post).to be_valid
+      end
       it '建物名が未入力でも、投稿ができる' do
         @post.building_name = ''
         expect(@post).to be_valid
@@ -28,10 +32,20 @@ RSpec.describe Post, type: :model do
         @post.valid?
         expect(@post.errors.full_messages).to include('イメージ写真を入力してください')
       end
+      it '会社情報として、業種がが1では投稿できないこと(初期値が1)' do
+        @post.industry_id = 1
+        @post.valid?
+        expect(@post.errors.full_messages).to include('業種は---以外を選択してください')
+      end
       it '会社情報として、会社名が必須であること' do
         @post.company_name = ''
         @post.valid?
         expect(@post.errors.full_messages).to include('会社名を入力してください')
+      end
+      it '会社情報として、URLが正しい記述になっていること' do
+        @post.company_url = 'abcdefg'
+        @post.valid?
+        expect(@post.errors.full_messages).to include('URLを正しく入力してください')
       end
       it '会社情報として、郵便番号が必須であること' do
         @post.post_code = ''

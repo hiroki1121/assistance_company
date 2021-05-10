@@ -85,7 +85,9 @@ ActiveRecord::Schema.define(version: 2021_05_06_030330) do
   end
 
   create_table "posts", charset: "utf8", force: :cascade do |t|
+    t.integer "industry_id", null: false
     t.string "company_name", null: false
+    t.string "company_url"
     t.string "post_code", null: false
     t.integer "prefecture_id", null: false
     t.string "address", null: false

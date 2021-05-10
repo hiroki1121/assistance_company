@@ -17,10 +17,24 @@
         </div>
         <div class="form-group">
           <div class='form-text-wrap'>
+            <label class="form-text">業種</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:industry_id, Industry.all, :id, :name, {}, {class:"select-box", id:"industry"}) %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
             <label class="form-text">会社名</label>
             <span class="indispensable">必須</span>
           </div>
           <%= f.text_field :company_name, class:"input-default", placeholder: "例）○○株式会社"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">URL</label>
+            <span class="optional">任意</span>
+          </div>
+          <%= f.text_field :company_url, class:"input-default", placeholder: "例）https://hoge.jp/"%>
         </div>
         <div class="form-group">
           <div class='form-text-wrap'>

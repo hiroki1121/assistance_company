@@ -43,7 +43,7 @@ private
 
 def post_params
   params.require(:post).permit(
-    :image, :company_name, :post_code, :prefecture_id, :address,
+    :image, :industry_id, :company_name, :company_url, :post_code, :prefecture_id, :address,
     :building_name, :employee_number, :division, :representative_name,
     :email, :represent_phone_number, :direct_phone_number, :business_detail
   ).merge(contracted_side_user_id: current_contracted_side_user.id)

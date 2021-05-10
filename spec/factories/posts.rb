@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :post do
+    industry_id { Faker::Number.between(from: 2, to: 11) }
     company_name { Faker::Lorem.sentence }
+    company_url { Faker::Internet.url }
     post_code { "#{Faker::Number.decimal_part(digits: 3)}-#{Faker::Number.decimal_part(digits: 4)}" }
     prefecture_id { Faker::Number.between(from: 2, to: 48) }
     address { "#{Gimei.city.kanji}#{Gimei.town.kanji}" }

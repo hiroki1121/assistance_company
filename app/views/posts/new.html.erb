@@ -6,8 +6,9 @@
 </div>
 <div class="company-post-main">
   <div class="form-wrap">
-    <div class="form-header">
-      <%= form_with(model: @post, local: true) do |f|%>
+    <%= form_with(model: @post, local: true) do |f|%>
+    <%= render 'shared/error_messages', model: f.object %>
+      <div class="form-header">
         <div class="form-group">
           <div class='form-text-wrap'>
             <label class="form-text">イメージ写真</label>
@@ -17,10 +18,24 @@
         </div>
         <div class="form-group">
           <div class='form-text-wrap'>
+            <label class="form-text">業種</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:industry_id, Industry.all, :id, :name, {}, {class:"select-box", id:"industry"}) %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
             <label class="form-text">会社名</label>
             <span class="indispensable">必須</span>
           </div>
           <%= f.text_field :company_name, class:"input-default", placeholder: "例）○○株式会社"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">URL</label>
+            <span class="optional">任意</span>
+          </div>
+          <%= f.text_field :company_url, class:"input-default", placeholder: "例）https://hoge.jp/"%>
         </div>
         <div class="form-group">
           <div class='form-text-wrap'>
@@ -107,8 +122,8 @@
             <button>戻る</button>
           <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
-  </div>
+    <% end %>
 </div>
 <%= render "shared/footer" %>

@@ -19,7 +19,9 @@ ja:
         first_name_ruby: お名前カナ（名）
       post:
         image: イメージ写真
+        industry_id: 業種
         company_name: 会社名
+        company_url: URL
         post_code: 郵便番号
         prefecture_id: 都道府県
         address: 住所
