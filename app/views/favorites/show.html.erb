@@ -15,6 +15,7 @@
         </div>
         <div class="company-show-info-contents">
           <ul class="company-show-info-items">
+            <li class="company-show-info-item">業種</li>
             <li class="company-show-info-item">会社名</li>
             <li class="company-show-info-item">ＵＲＬ</li>
             <li class="company-show-info-item">所在地</li>
@@ -31,6 +32,7 @@
           <%# 未投稿時の表示 %>
           <% if @post.nil? %>
           <ul class="company-info-content">
+            <li class="input-content", id="company-name">情報通信</li>
             <li class="input-content", id="company-name">HOGE株式会社</li>
             <li class="input-content", id="company-name">https://hoge.jp/</li>
             <li class="input-content", id="prefecture">東京都</li>
@@ -46,9 +48,14 @@
           </ul>
           <% end %>
           <ul class="company-info-content">
+            <li class="input-content", id="company-name"><%= @post.industry.name %></li>
             <li class="input-content", id="company-name"><%= @post.company_name %></li>
             <li class="input-content", id="company-name">
-              <%= link_to @post.company_url, @post.company_url, :target=>["_blank"], rel:"noopener" %>
+              <% if @post.company_url.empty? %>
+                  <p class="blank-input">未入力</p>
+                <% else %>
+                  <%= link_to @post.company_url, @post.company_url, :target=>["_blank"], rel:"noopener" %>
+                <% end %>
             </li>
             <li class="input-content", id="prefecture"><%= @post.prefecture.name%></li>
             <li class="input-content", id="address"><%= @post.address %></li>
