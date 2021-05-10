@@ -32,7 +32,17 @@ body {
 
 /* 検索バー */
 .search-bar {
-  margin: 50px auto;
+  margin: 25px auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-search {
+  color: #001e43;
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
 }
 
 .search-form {
@@ -41,19 +51,36 @@ body {
   align-items: center;
 }
 
-.search-button {
+.fa-times:before {
+  color: #001e43;
+}
+
+
+.search-select-box {
+  margin: 0 10px;
+}
+
+select {
+  height: 50px;
+}
+
+
+.input-box {
+  height: 50px;
+  width: 40vw;
+  margin-left: 10px;
+}
+
+.search-btn {
+  width: 60px;
   height: 50px;
   background-color: #001e43;
+  border-radius: 2px;
   color: #ffffff;
   font-size: 14px;
   border: 1px solid #001e43;
   margin-left: 10px;
   cursor: pointer;
-}
-
-.input-box {
-  height: 50px;
-  width: 40vw;
 }
 
 /* 会社一覧 */

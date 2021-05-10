@@ -1,0 +1,9 @@
+.no-search-message {
+  min-height: 250px;
+  text-align: center;
+  margin: 100px auto;
+}
+
+.fa-exclamation-triangle {
+  color: red;
+}

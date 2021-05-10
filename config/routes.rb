@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   resources :contracted_side_users, only: [:show]
   resources :posts, only: [:index, :new, :create, :edit, :update, :destroy], shallow: true do
     resource :favorites, only: [:create, :destroy, :show]
+    collection do
+      get 'search'
+    end
   end
 end

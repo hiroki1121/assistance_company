@@ -13,10 +13,15 @@
 <body>
   <%# 検索バー %>
   <div class="search-bar">
-    <form class="search-form" action="#">
-      <input class="input-box" placeholder='フリーワードを記入 (ex.東京都,設計)'>
-      <button class="search-button">検索する</button>
-    </form>
+    <i class="fas fa-search">会社を検索する</i>
+    <%= search_form_for @q, url: search_posts_path, class: "search-form" do |f| %>
+    <%= f.collection_select :industry_id_eq, Industry.where.not(id: 1), :id, :name, include_blank: '業種を選択', class:"search-select-box" %>
+    <i class="fas fa-times"></i>
+    <%= f.collection_select :prefecture_id_eq, Prefecture.where.not(id: 1), :id, :name, include_blank: '都道府県を選択', class:"search-select-box" %>
+    <i class="fas fa-times"></i>
+    <%= f.search_field :company_name_or_division_or_representative_name_or_business_detail_cont, placeholder: "キーワードを記入", class: "input-box" %>
+    <%= f.submit "検索", class: "search-btn" %>
+    <% end %>
   </div>
 <%# 会社一覧 %>
   <div class="title-bar-main">

@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
-  before_action :authenticate_any!, except: [:index]
+  before_action :authenticate_any!, except: [:index, :search]
   before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :search_post, only: [:index, :search]
 
   def index
-    @posts = Post.order('created_at DESC')
+    @posts = Post.order('created_at DESC').limit(10)
   end
 
   def new
@@ -37,22 +38,31 @@ class PostsController < ApplicationController
   def favirites
     @favirite = current_consignment_side_user.favirites_posts.includes(:consignment_side_user).order(created_at: :desc)
   end
-end
 
-private
+  def search
+    @posts = @q.result.includes(:contracted_side_user) 
+      
+  end
 
-def post_params
-  params.require(:post).permit(
-    :image, :industry_id, :company_name, :company_url, :post_code, :prefecture_id, :address,
-    :building_name, :employee_number, :division, :representative_name,
-    :email, :represent_phone_number, :direct_phone_number, :business_detail
-  ).merge(contracted_side_user_id: current_contracted_side_user.id)
-end
+  private
 
-def authenticate_any!
-  redirect_to contracted_side_user_session_path unless contracted_side_user_signed_in?
-end
+  def post_params
+    params.require(:post).permit(
+      :image, :industry_id, :company_name, :company_url, :post_code, :prefecture_id, :address,
+      :building_name, :employee_number, :division, :representative_name,
+      :email, :represent_phone_number, :direct_phone_number, :business_detail
+    ).merge(contracted_side_user_id: current_contracted_side_user.id)
+  end
 
-def set_post
-  @post = Post.find(params[:id])
+  def authenticate_any!
+    redirect_to contracted_side_user_session_path unless contracted_side_user_signed_in?
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def search_post
+    @q = Post.ransack(params[:q]) 
+  end
 end
