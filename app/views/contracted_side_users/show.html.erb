@@ -6,10 +6,17 @@
 </div>
   <% @post.each do |post| %>
     <%= render "shared/company_detail", post: post %>
-    <div class="posted-delete-btn-form">
-      <%= link_to post_path(post), method: :delete, class:"posted-delete-btn" do %>
-        <i class="far fa-trash-alt">削除する</i>
-      <% end %>
+    <div class="post-btn-form">
+      <div class="posted-edit-btn-form">
+        <%= link_to edit_post_path(post), method: :get, class:"posted-edit-btn" do %>
+          <i class="fas fa-edit">編集する</i>
+        <% end %>
+      </div>
+      <div class="posted-delete-btn-form">
+        <%= link_to post_path(post), method: :delete, class:"posted-delete-btn" do %>
+          <i class="far fa-trash-alt">削除する</i>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <%= render "shared/footer" %>

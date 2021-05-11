@@ -1,3 +1,21 @@
+.post-btn-form {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.posted-edit-btn-form {
+  background-color: #f7f7f7; 
+  text-align: center;
+  margin: 20px auto;
+}
+
+.posted-edit-btn i {
+  font-size: 20px;
+  color: #ffbc7a;
+}
+
 .posted-delete-btn-form {
   background-color: #f7f7f7; 
   text-align: center;
