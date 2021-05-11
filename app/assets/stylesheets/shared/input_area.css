@@ -1,0 +1,31 @@
+.image-select {
+  margin-top: 15px;
+}
+
+.optional {
+  color: #ffffff;
+  background-color: #94adda;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.select-box {
+  height: 30px;
+  width: 400px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.input-detail {
+  width: 100%;
+  margin-top: 5px;
+  height: 150px;
+  padding: 10px 18px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}

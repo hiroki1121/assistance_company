@@ -36,12 +36,11 @@ class PostsController < ApplicationController
   end
 
   def favirites
-    @favirite = current_consignment_side_user.favirites_posts.includes(:consignment_side_user).order(created_at: :desc)
+    @favirite = current_consignment_side_user.favirites_posts.includes(:consignment_side_user).order('created_at DESC')
   end
 
   def search
-    @posts = @q.result.includes(:contracted_side_user) 
-      
+    @posts = @q.result.includes(:contracted_side_user).order('created_at DESC')
   end
 
   private

@@ -3,7 +3,8 @@ class ConsignmentSideUsersController < ApplicationController
 
   def show
     @favorite = Favorite.find_by(consignment_side_user_id: current_consignment_side_user.id)
-    @posts = Post.where(params[id: @favorite.post_id]) if @favorite.present?
+    favorites = Favorite.where(consignment_side_user_id: current_consignment_side_user.id).order(created_at: :desc).pluck(:post_id)
+    @posts = Post.find(favorites)
   end
 
   private
