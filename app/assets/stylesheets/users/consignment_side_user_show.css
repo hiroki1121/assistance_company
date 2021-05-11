@@ -17,7 +17,18 @@
   align-items: center;
 }
 
+.delete-btn-form {
+  margin: 10px 0;
+  text-align: center;
+}
+
 .delete-btn i {
   font-size: 20px;
   color: #888888;
+}
+
+.no-favorite-message {
+  min-height: 250px;
+  text-align: center;
+  margin: 100px 0;
 }
