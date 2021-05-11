@@ -20,9 +20,7 @@ default: &default
 development:
   <<: *default
   database: assistance_company_development
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -53,5 +51,6 @@ test:
 production:
   <<: *default
   database: assistance_company_production
-  username: assistance_company
-  password: <%= ENV['ASSISTANCE_COMPANY_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
