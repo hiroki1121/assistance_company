@@ -7,19 +7,20 @@ class FavoritesController < ApplicationController
     Favorite.create(consignment_side_user_id: consignment_side_user.id, post_id: @post.id)
     redirect_to post_favorites_path(@post)
   end
-  
+
   def destroy
     consignment_side_user = current_consignment_side_user
     @favorite = Favorite.find_by(consignment_side_user_id: consignment_side_user.id, post_id: @post.id)
     @favorite.delete
     redirect_to post_favorites_path(@post)
   end
-  
+
   def show
     Favorite.all
   end
 
   private
+
   def set_post
     @post = Post.find(params[:post_id])
   end

@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @post.update(post_params)
       redirect_to post_favorites_path(@post.id)
@@ -62,6 +62,6 @@ class PostsController < ApplicationController
   end
 
   def search_post
-    @q = Post.ransack(params[:q]) 
+    @q = Post.ransack(params[:q])
   end
 end

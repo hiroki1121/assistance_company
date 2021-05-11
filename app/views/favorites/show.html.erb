@@ -5,9 +5,7 @@
       <h1 class="title-bar-main-content">会社詳細</h1>
     </div>
   </div>
-
   <%= render "shared/company_detail", post: @post %>
-
   <div class="show-btn-form">
     <% if contracted_side_user_signed_in? %>
       <%= link_to "編集する", edit_post_path(@post), method: :get, class: "edit-path-btn" %>

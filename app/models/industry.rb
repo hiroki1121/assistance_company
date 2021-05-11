@@ -10,7 +10,7 @@ class Industry < ActiveHash::Base
     { id: 8, name: '生活関連サービス、娯楽' },
     { id: 9, name: '教育、学習支援' },
     { id: 10, name: '医療、福祉' },
-    { id: 11, name: 'その他' },
+    { id: 11, name: 'その他' }
   ]
 
   include ActiveHash::Associations
