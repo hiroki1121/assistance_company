@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+<div class="posts-title">
+  <div class="title-bar-main">
+    <h1 class="title-bar-main-content">レビュー一覧</h1>
+  </div>
+</div>
+<%# @review.each do |review| %>
+  <%# if @review.present? %>
+    <div class="company-review-main">
+      <div class="company-review-wrap">
+        <div class="company-review-list">
+          <ul class="review-items">
+            <li class="review-item"><span class="fa fa-star" id="star"></span>3.4(仮)</li>
+            <li class="review-item"><b>とても頑張っていただきました！</b></li>
+            <li class="review-item" style="color:#a0a0a0">2020年4月1日にレビュー済み</li>
+            <li class="review-item">年度末の納期が迫ってた時期に仕事をお願いさせていただきました。タイトなスケジュールの中、無理を言ってばっかりでしたが全て期限ないに提出していただきました。内容も完璧でした。また、お願いさせていただきます！</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <%# else %>
+    <div class="company-review-main">
+      <div class="company-review-wrap">
+        <div class="no-search-message">
+          <i class="fas fa-exclamation-triangle">現在、レビューは投稿されておりません</i>
+        </div>
+      </div>
+    </div>
+  <%# end %>
+<%# end%>
+<%= render "shared/footer" %>

@@ -28,7 +28,6 @@ a {
 
 .company-info-items {
   width: 150px;
-  text-align: center;
   padding: 0;
 }
 
@@ -36,6 +35,8 @@ a {
   color: black;
   list-style: none;
   padding: 10px;
+  text-align-last: justify;
+  text-justify: inter-ideograph;
 }
 
 .company-info-contents {
@@ -49,10 +50,14 @@ a {
   overflow-wrap: normal;
   text-align: left;
   padding: 10px;
-  margin: 10px 0;
+  margin: 8px 0;
   list-style: none;
 }
 
 .input-content {
   color: black;
+}
+
+.fa-star {
+  color: #ffcc00;
 }

@@ -1,0 +1,29 @@
+.company-review-main {
+  width: 100%;
+  min-width: 800px;
+  min-height: 250px;
+  background-color: #f7f7f7;
+  margin-top: 30px;
+}
+
+.company-review-wrap {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.company-review-list {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-items {
+  background-color: #ffffff;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.review-item {
+  padding: 5px;
+}

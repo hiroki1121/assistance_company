@@ -4,13 +4,13 @@
     <h1 class="title-bar-main-content">マイページ</h1>
   </div>
 </div>
-<p class="favorite-title-text">お気に入り</p>
+<p class="favorite-title-text">お気に入り一覧</p>
 <div class="company-lists">
   <%# 投稿内容がない場合 %>
   <% if @favorite.nil? %>
     <div class="no-search-message">
       <i class="fas fa-exclamation-triangle">お気に入りに登録されている会社はありません</i>
-  </div>
+    </div>
   <% end %>
   <%# 投稿内容がある場合 %>
   <% if @favorite.present? %>

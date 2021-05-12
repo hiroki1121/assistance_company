@@ -10,13 +10,13 @@
 }
 
 .show-btn-form {
-  margin: 20px auto;
+  margin: 20px 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.favorite-btn {
+.favorite-btn, .review-new-btn {
   font-size: 20px;
   color: #ffffff;
   text-decoration: none;
@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.favorite-release-btn {
+.favorite-release-btn, .review-edit-btn {
   font-size: 20px;
   color: #ffffff;
   text-decoration: none;
@@ -37,3 +37,4 @@
   padding: 18.5px 50px;
   cursor: pointer;
 }
+

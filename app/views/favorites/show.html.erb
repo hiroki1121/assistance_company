@@ -20,7 +20,7 @@
         <% end %>
       </div>
     </div>
-    <% elsif consignment_side_user_signed_in? %>
+    <% elsif %>
       <% if !Favorite.exists?(consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id) %>
         <%= link_to "お気に入り", post_favorites_path(@post), method: :post, class:"favorite-btn" %>
       <% else %>
@@ -28,6 +28,14 @@
       <% end %>
     <% else %>
     <% end %>
+  <div class="show-btn-form">
+    <%# 評価の条件分岐を行う %>
+    <%# if consignment_side_user_signed_in? && @review.present? %>
+      <%= link_to "レビューを編集", "#", method: :get, class:"review-edit-btn" %>
+    <%# else %>
+      <%= link_to "この会社をレビュー", new_post_reviews_path(@post), method: :get, class:"review-new-btn" %>
+    <%# end %>
+  </div>
   </div>
 <div>
 <%= render "shared/footer" %>
