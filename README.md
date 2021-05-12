@@ -73,7 +73,8 @@
 
 |Column                 |Type        |Options                         |
 |-----------------------|------------|--------------------------------|
-| comment               | string     |                                |
+| title                 | string     |                                |
+| comment               | text       |                                |
 | score                 | float      | null: false                    |
 | consignment_side_user | references | null: false, foreign_key: true |
 | post                  | references | null: false, foreign_key: true |

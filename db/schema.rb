@@ -106,7 +106,8 @@ ActiveRecord::Schema.define(version: 2021_05_12_022701) do
   end
 
   create_table "reviews", charset: "utf8", force: :cascade do |t|
-    t.string "comment"
+    t.string "title"
+    t.text "comment"
     t.float "score", null: false
     t.bigint "consignment_side_user_id"
     t.bigint "post_id"
