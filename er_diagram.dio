@@ -45,7 +45,7 @@
                 <mxCell id="23" value="reviewsテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;labelBackgroundColor=none;fillColor=#FFFFFF;fontColor=#000000;labelBorderColor=none;swimlaneFillColor=none;strokeColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="480" y="35" width="260" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="title(string型)&#10;comment(text型)&#10;score(float型,NOT,NULL)&#10;consignment_side_user(refrences型)&#10;post(refrences型)" style="align=left;strokeColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fillColor=#FFFFFF;fontColor=#000000;" parent="23" vertex="1">
+                <mxCell id="24" value="title(string型,NOT,NULL)&#10;comment(text型,NOT,NULL)&#10;score(float型,NOT,NULL)&#10;consignment_side_user(refrences型)&#10;post(refrences型)" style="align=left;strokeColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fillColor=#FFFFFF;fontColor=#000000;" parent="23" vertex="1">
                     <mxGeometry y="30" width="260" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="" style="align=left;strokeColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fillColor=#FFFFFF;fontColor=#000000;" parent="23" vertex="1">
