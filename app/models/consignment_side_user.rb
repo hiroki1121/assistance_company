@@ -5,7 +5,9 @@ class ConsignmentSideUser < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :favirites, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_many :posts, through: :favorites
+  has_many :posts, through: :reviews
 
   VALID_EAMIL_REGEX = /\A[A-Za-z0-9.+_-]+@([A-Za-z0-9_-]+\.)+[A-Za-z]{2,}\z/.freeze
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
