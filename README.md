@@ -67,3 +67,17 @@
 ### Association
 - belongs_to :consignment_side_user
 - belongs_to :post
+
+
+## reviewsテーブル
+
+|Column                 |Type        |Options                         |
+|-----------------------|------------|--------------------------------|
+| comment               | string     |                                |
+| score                 | integer    | null: false                    |
+| consignment_side_user | references | null: false, foreign_key: true |
+| post                  | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :consignment_side_user
+- belongs_to :post
