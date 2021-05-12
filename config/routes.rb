@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :consignment_side_users, only: [:show]
   resources :contracted_side_users, only: [:show]
   resources :posts, only: [:index, :new, :create, :edit, :update, :destroy], shallow: true do
+    resource :reviews, only: [:new, :create, :show, :edit, :update, :destroy]
     resource :favorites, only: [:create, :destroy, :show]
     collection do
       get 'search'
