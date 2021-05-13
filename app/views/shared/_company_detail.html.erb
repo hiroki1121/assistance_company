@@ -8,7 +8,6 @@
         </div>
         <div class="company-show-info-contents">
           <ul class="company-show-info-items">
-            <li class="company-show-info-item">評価</li>
             <li class="company-show-info-item">業種</li>
             <li class="company-show-info-item">会社名</li>
             <li class="company-show-info-item">ＵＲＬ</li>
@@ -52,7 +51,9 @@
       </div>
       <div class="company-show-info-contents">
         <ul class="company-show-info-items">
-          <li class="company-show-info-item">評価</li>
+          <% if current_page?(favorite_path) %>
+            <li class="company-show-info-item">評価</li>
+          <% end %>
           <li class="company-show-info-item">業種</li>
           <li class="company-show-info-item">会社名</li>
           <li class="company-show-info-item">ＵＲＬ</li>
@@ -68,11 +69,18 @@
           <li class="company-show-info-item">会社概要</li>
         </ul>
         <ul class="company-info-content">
-          <li class="input-content", id="company-name">
-            <%= link_to review_path(@post) do %>
-              <span class="fa fa-star" id="star"></span>3.4(仮)
-            <% end %>
-          </li>
+          <% if current_page?(favorite_path) %>
+            <li class="input-content", id="company-name">
+              <%= link_to review_path(@post) do %>
+                <span class="fa fa-star" id="star"></span>
+                <% if @review.present? %>
+                  <%= @review.average(:score).round(1) %>点
+                <% else %>
+                  0.0点
+                <% end %>
+              <% end %>
+            </li>
+          <% end %>
           <li class="input-content", id="company-name"><%= post.industry.name %></li>
           <li class="input-content", id="company-name"><%= post.company_name %></li>
           <li class="input-content", id="company-name">
