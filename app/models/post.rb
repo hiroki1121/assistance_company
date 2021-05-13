@@ -3,8 +3,8 @@ class Post < ApplicationRecord
   belongs_to :contracted_side_user
   has_many :favorites, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :consignment_side_user, through: :favirites
-  has_many :consignment_side_user, through: :reviews
+  has_many :consignment_side_users, through: :favirites
+  has_many :consignment_side_users, through: :reviews
 
   VALID_POST_CODE_REGEX = /\A\d{3}-\d{4}\z/.freeze
   VALID_EAMIL_REGEX = /\A[A-Za-z0-9.+_-]+@([A-Za-z0-9_-]+\.)+[A-Za-z]{2,}\z/.freeze

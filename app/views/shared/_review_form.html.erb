@@ -10,48 +10,48 @@
         </li>
       </ul>
     </div>
-    <%= form_with(model: @review, local: true) do |f|%>
-      <%#= render 'shared/error_messages', model: f.object %>
-        <div class="review-form-header">
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">レビュータイトル</label>
+    <%= form_with(model: [@post, @review], local: true) do |f| %>
+      <div class="review-form-header">
+        <%= render 'shared/error_messages', model: f.object %>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">レビュータイトル</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :title, class:"input-default", placeholder: "最も伝えたいポイントは何ですか？"%>
+        </div>
+        <div class="form-group rating-box" id="star">
+          <div class='form-text-wrap'>
+              <label class="form-text">評価</label>
               <span class="indispensable">必須</span>
-            </div>
-            <%= f.text_field :title, class:"input-default", placeholder: "最も伝えたいポイントは何ですか？"%>
           </div>
-          <div class="form-group rating-box" id="star">
-            <div class='form-text-wrap'>
-                <label class="form-text">評価</label>
-                <span class="indispensable">必須</span>
+          <div class="main-rating">
+            <div class="ratings">
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
             </div>
-            <div class="main-rating">
-              <div class="ratings">
-                <span class="fa fa-star-o" id="star"></span>
-                <span class="fa fa-star-o" id="star"></span>
-                <span class="fa fa-star-o" id="star"></span>
-                <span class="fa fa-star-o" id="star"></span>
-                <span class="fa fa-star-o" id="star"></span>
-              </div>
-            </div>
-            <%= f.hidden_field :score, id: :review_star %>
           </div>
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">レビュー内容</label>
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.text_area :comment, class:"input-detail", placeholder: "良かった点/良くなかった点は何ですか？（500文字まで）",rows:"7" ,maxlength:"500"%>
+          <%= f.hidden_field :score, id: :review_star %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">レビュー内容</label>
+            <span class="indispensable">必須</span>
           </div>
-          <div class='form-btn'>
-            <div class='register-btn'>
-              <%= f.submit "投稿する" ,class:"register-bronze-btn" %>
-            </div>
-            <%= link_to root_path, class:'root-path' do %>
-              <button>戻る</button>
-            <% end %>
+          <%= f.text_area :comment, class:"input-detail", placeholder: "良かった点/良くなかった点は何ですか？（500文字まで）",rows:"7" ,maxlength:"500"%>
+        </div>
+        <div class='form-btn'>
+          <div class='register-btn'>
+            <%= f.submit "投稿する" ,class:"register-bronze-btn" %>
           </div>
+          <%= link_to root_path, class:'root-path' do %>
+            <button>戻る</button>
+          <% end %>
         </div>
       </div>
     <% end %>
+  </div>
 </div>

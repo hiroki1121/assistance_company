@@ -24,7 +24,7 @@
       <% if !Favorite.exists?(consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id) %>
         <%= link_to "お気に入り", post_favorites_path(@post), method: :post, class:"favorite-btn" %>
       <% else %>
-        <%= link_to "お気に入り解除", post_favorites_path(@post), method: :delete, class:"favorite-release-btn" %>
+        <%= link_to "お気に入り解除", favorite_path(@post), method: :delete, class:"favorite-release-btn" %>
       <% end %>
     <% else %>
     <% end %>
@@ -33,7 +33,7 @@
     <%# if consignment_side_user_signed_in? && @review.present? %>
       <%= link_to "レビューを編集", "#", method: :get, class:"review-edit-btn" %>
     <%# else %>
-      <%= link_to "この会社をレビュー", new_post_reviews_path(@post), method: :get, class:"review-new-btn" %>
+      <%= link_to "この会社をレビュー", new_post_review_path(@post.id), method: :get, class:"review-new-btn" %>
     <%# end %>
   </div>
   </div>

@@ -1,28 +1,27 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_any!, only: [:create, :destroy]
-  before_action :set_post
+  before_action :set_post, only: [:show, :destroy]
 
   def create
-    consignment_side_user = current_consignment_side_user
-    Favorite.create(consignment_side_user_id: consignment_side_user.id, post_id: @post.id)
-    redirect_to post_favorites_path(@post)
+    @post = Post.find(params[:post_id])
+    Favorite.create(consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id)
+    redirect_to favorite_path(@post)
   end
 
   def destroy
-    consignment_side_user = current_consignment_side_user
-    @favorite = Favorite.find_by(consignment_side_user_id: consignment_side_user.id, post_id: @post.id)
+    @favorite = Favorite.find_by(consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id)
     @favorite.delete
-    redirect_to post_favorites_path(@post)
+    redirect_to favorite_path(@post)
   end
 
   def show
-    Favorite.all
+    favorite = Favorite.find_by(post_id: @post.id)
   end
 
   private
 
   def set_post
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
   end
 
   def authenticate_any!
