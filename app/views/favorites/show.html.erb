@@ -29,12 +29,9 @@
     <% else %>
     <% end %>
   <div class="show-btn-form">
-    <%# 評価の条件分岐を行う %>
-    <%# if consignment_side_user_signed_in? && @review.present? %>
-      <%= link_to "レビューを編集", "#", method: :get, class:"review-edit-btn" %>
-    <%# else %>
+    <% if consignment_side_user_signed_in? %>
       <%= link_to "この会社をレビュー", new_post_review_path(@post.id), method: :get, class:"review-new-btn" %>
-    <%# end %>
+    <% end %>
   </div>
   </div>
 <div>

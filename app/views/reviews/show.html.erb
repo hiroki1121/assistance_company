@@ -4,21 +4,35 @@
     <h1 class="title-bar-main-content">レビュー一覧</h1>
   </div>
 </div>
-<%# @review.each do |review| %>
-  <%# if @review.present? %>
+<% @reviews.each do |review| %>
+  <% if @reviews.present? %>
     <div class="company-review-main">
       <div class="company-review-wrap">
         <div class="company-review-list">
           <ul class="review-items">
             <li class="review-item"><span class="fa fa-star" id="star"></span>3.4(仮)</li>
-            <li class="review-item"><b>とても頑張っていただきました！</b></li>
-            <li class="review-item" style="color:#a0a0a0">2020年4月1日にレビュー済み</li>
-            <li class="review-item">年度末の納期が迫ってた時期に仕事をお願いさせていただきました。タイトなスケジュールの中、無理を言ってばっかりでしたが全て期限ないに提出していただきました。内容も完璧でした。また、お願いさせていただきます！</li>
+            <li class="review-item"><b><%= review.title %></b></li>
+            <li class="review-item" style="color:#a0a0a0"><%= review.created_at.to_s(:datetime_jp) %>に投稿済み</li>
+            <li class="review-item"><%= review.comment %></li>
           </ul>
         </div>
+        <% if consignment_side_user_signed_in? && review.consignment_side_user_id == current_consignment_side_user.id %>
+          <div class="post-btn-form">
+            <div class="posted-edit-btn-form">
+              <%= link_to edit_review_path(@review), method: :get, class:"posted-edit-btn" do %>
+                <i class="fas fa-edit">編集する</i>
+              <% end %>
+            </div>
+            <div class="posted-delete-btn-form">
+              <%= link_to review_path(@review), method: :delete, class:"posted-delete-btn" do %>
+                <i class="far fa-trash-alt">削除する</i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-  <%# else %>
+  <% else %>
     <div class="company-review-main">
       <div class="company-review-wrap">
         <div class="no-search-message">
@@ -26,6 +40,6 @@
         </div>
       </div>
     </div>
-  <%# end %>
-<%# end%>
+  <% end %>
+<% end%>
 <%= render "shared/footer" %>

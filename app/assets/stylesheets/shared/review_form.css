@@ -29,3 +29,14 @@
 .main-rating {
   margin-top: 10px;
 }
+
+.back-path {
+  width: 150px;
+  background: #ffffff;
+  color: #ac6b25;
+  border: 1px solid #ac6b25;
+  line-height: 30px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 20px;
+}
