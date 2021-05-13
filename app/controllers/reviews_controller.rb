@@ -16,12 +16,11 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @reviews = Review.where(post_id: @post.id)
-    @review = Review.find(params[:id])
+    @review = Review.where(post_id: @post.id)
   end
 
   def edit
-    @review = Review.find(params[:id])
+    @review = Review.new
   end
 
   def update

@@ -4,13 +4,13 @@
     <h1 class="title-bar-main-content">レビュー一覧</h1>
   </div>
 </div>
-<% @reviews.each do |review| %>
-  <% if @reviews.present? %>
+<% @review.each do |review| %>
+  <% if @review.present? %>
     <div class="company-review-main">
       <div class="company-review-wrap">
         <div class="company-review-list">
           <ul class="review-items">
-            <li class="review-item"><span class="fa fa-star" id="star"></span>3.4(仮)</li>
+            <li class="review-item"><span class="fa fa-star" id="star"></span><%= review.score %>点</li>
             <li class="review-item"><b><%= review.title %></b></li>
             <li class="review-item" style="color:#a0a0a0"><%= review.created_at.to_s(:datetime_jp) %>に投稿済み</li>
             <li class="review-item"><%= review.comment %></li>
