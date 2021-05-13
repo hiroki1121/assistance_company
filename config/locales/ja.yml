@@ -33,3 +33,7 @@ ja:
         represent_phone_number: 電話番号（代表）
         direct_phone_number: 電話番号（直通）
         business_detail: 会社概要
+      review:
+        title: レビュータイトル
+        comment: レビュー内容
+        score: 評価
