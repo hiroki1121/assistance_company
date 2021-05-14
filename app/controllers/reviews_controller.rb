@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
-  before_action :set_post_id, only: [:new, :create]
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post_id, only: [:index, :new, :create]
+  before_action :set_post, only: [:edit, :update]
+
+  def index
+    @review = Review.where(post_id: @post.id)
+  end
 
   def new
     @review = Review.new
@@ -15,12 +19,8 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
-    @review = Review.where(post_id: @post.id)
-  end
-
   def edit
-    @review = Review.new
+    @review = Review.find(params[:id])
   end
 
   def update

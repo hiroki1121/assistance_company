@@ -18,6 +18,21 @@
   justify-content: center;
 }
 
+.review-company-bar {
+  background-color: #ffffff;
+  display: flex;
+  padding: 20px;
+}
+
+.review-company-bar-text {
+  margin-bottom: 30px;
+}
+
+.company-bar-img {
+  width: 180px;
+  height: 120px;
+}
+
 .review-items {
   background-color: #ffffff;
   margin: 20px 0;
@@ -26,4 +41,18 @@
 
 .review-item {
   padding: 5px;
+}
+
+
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ffcc33;
+  height: 25px;
+}
+.star-rating-back {
+  color: #ccc;
 }

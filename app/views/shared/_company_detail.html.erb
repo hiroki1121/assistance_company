@@ -71,7 +71,7 @@
         <ul class="company-info-content">
           <% if current_page?(favorite_path) %>
             <li class="input-content", id="company-name">
-              <%= link_to review_path(@post) do %>
+              <%= link_to post_reviews_path(@post) do %>
                 <span class="fa fa-star" id="star"></span>
                 <% if @review.present? %>
                   <%= @review.average(:score).round(1) %>点
