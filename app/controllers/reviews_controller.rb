@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_post_id, only: [:index, :new, :create]
-  before_action :set_post, only: [:edit, :update]
+  before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
     @review = Review.where(post_id: @post.id)
@@ -32,6 +32,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    redirect_to favorite_path(@post) if @review.destroy
   end
 
   private
