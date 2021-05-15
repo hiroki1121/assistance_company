@@ -5,6 +5,6 @@ class Review < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :score
-    validates :comment
+    validates :comment, length: { maximum: 500 }
   end
 end
