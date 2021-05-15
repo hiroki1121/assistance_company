@@ -5,6 +5,6 @@ class Review < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :comment
-    validates :score
+    validates :score, numericality: { other_than: 1, message: 'を選択してください' }
   end
 end
