@@ -7,12 +7,10 @@ function review (){
   for(let i=0; i<stars.length; i++){
     stars[i].addEventListener("mouseover",function(){
       for(let j=0; j<stars.length; j++){
-        console.log(stars.length)
         stars[j].classList.remove("fa-star");
         stars[j].classList.add("fa-star-o");
       }
       for(let j=0; j<=i; j++){
-        console.log(stars.length)
         stars[j].classList.remove("fa-star-o");
         stars[j].classList.add("fa-star");
       }
