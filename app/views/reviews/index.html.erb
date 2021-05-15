@@ -5,13 +5,15 @@
   </div>
 </div>
 <div class="company-review-wrap">
-  <div class="review-company-bar">
-    <%= image_tag @post.image, class:"company-bar-img" %>
-    <ul class="review-company-info">
-      <li class="review-company-bar-text">会社名：<%= @post.company_name %></li>
-      <li class="review-count"><%= @review.count %>件のレビュー</li>
-    </ul>
-  </div>
+  <%= link_to :back do %>
+    <div class="review-company-bar">
+      <%= image_tag @post.image, class:"company-bar-img" %>
+      <ul class="review-company-info">
+        <li class="review-company-bar-text">会社名：<%= @post.company_name %></li>
+        <li class="review-count"><%= @review.count %>件のレビュー</li>
+      </ul>
+    </div>
+  <% end %>
 </div>
 <% @review.each do |review| %>
   <% if @review.present? %>

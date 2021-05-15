@@ -19,6 +19,7 @@
 }
 
 .review-company-bar {
+  color: black;
   background-color: #ffffff;
   display: flex;
   padding: 20px;
