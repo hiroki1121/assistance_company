@@ -70,8 +70,8 @@
         </ul>
         <ul class="company-info-content">
           <% if current_page?(post_favorite_path) %>
-            <li class="input-content", id="company-name">
-              <%= link_to post_reviews_path(@post) do %>
+            <li class="input-content", id="ave-score">
+              <%= link_to post_reviews_path(@post), remote: true, id: :ave_score_a do %>
                 <span class="fa fa-star" id="star"></span>
                 <% if @review.present? %>
                   <%= @review.average(:score).round(1) %>点
@@ -81,13 +81,13 @@
               <% end %>
             </li>
           <% end %>
-          <li class="input-content", id="company-name"><%= post.industry.name %></li>
+          <li class="input-content", id="industry-name"><%= post.industry.name %></li>
           <li class="input-content", id="company-name"><%= post.company_name %></li>
-          <li class="input-content", id="company-name">
+          <li class="input-content", id="company_url">
             <% if post.company_url.empty? %>
               <p class="blank-input">未入力</p>
             <% else %>
-              <%= link_to post.company_url, post.company_url, :target=>["_blank"], rel:"noopener" %>
+              <%= link_to post.company_url, post.company_url, :target=>["_blank"], rel:"noopener", remote: true, id: :company_url_a %>
             <% end %>
           </li>
           <li class="input-content", id="prefecture"><%= post.prefecture.name%></li>
