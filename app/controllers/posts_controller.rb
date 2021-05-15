@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   before_action :search_post, only: [:index, :search]
 
   def index
-    @posts = Post.order('created_at DESC').limit(10)
+    @posts = Post.order('created_at DESC').limit(20)
+    @favorite = Favorite.all
   end
 
   def new
@@ -35,9 +36,9 @@ class PostsController < ApplicationController
     redirect_to root_path if @post.destroy
   end
 
-  def favirites
-    @favirite = current_consignment_side_user.favirites_posts.includes(:consignment_side_user).order('created_at DESC')
-  end
+  # def favirites
+  #   @favirite = current_consignment_side_user.favirites_posts.includes(:consignment_side_user).order('created_at DESC')
+  # end
 
   def search
     @posts = @q.result.includes(:contracted_side_user).order('created_at DESC')

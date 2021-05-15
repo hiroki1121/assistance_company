@@ -10,7 +10,15 @@
         </li>
       </ul>
     </div>
-    <%= form_with(model: [@post, @review], local: true) do |f| %>
+    <%
+      if @post.id.nil?
+        post_review = [@review]
+      else
+        post_review = [@post, @review]
+      end
+     %>
+    <%= form_with(model: post_review, local: true) do |f| %>
+    <%#= form_with(model: [@post, @review], local: true) do |f| %>
       <div class="review-form-header">
         <%= render 'shared/error_messages', model: f.object %>
         <div class="form-group">

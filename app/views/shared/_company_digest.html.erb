@@ -23,7 +23,7 @@
   <% end %>
 <% end %>
 <%# 投稿内容がある場合 %>
-<%= link_to favorite_path(post.id) do %>
+<%= link_to post_favorite_path(id: @favorite,post_id: post.id) do %>
   <div class="company-list">
     <div class="company-content-img">
       <%= image_tag post.image, class: "company-img" %>

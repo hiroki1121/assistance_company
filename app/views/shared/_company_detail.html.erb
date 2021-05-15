@@ -51,7 +51,7 @@
       </div>
       <div class="company-show-info-contents">
         <ul class="company-show-info-items">
-          <% if current_page?(favorite_path) %>
+          <% if current_page?(post_favorite_path) %>
             <li class="company-show-info-item">評価</li>
           <% end %>
           <li class="company-show-info-item">業種</li>
@@ -69,7 +69,7 @@
           <li class="company-show-info-item">会社概要</li>
         </ul>
         <ul class="company-info-content">
-          <% if current_page?(favorite_path) %>
+          <% if current_page?(post_favorite_path) %>
             <li class="input-content", id="company-name">
               <%= link_to post_reviews_path(@post) do %>
                 <span class="fa fa-star" id="star"></span>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :consignment_side_users, only: [:show]
   resources :contracted_side_users, only: [:show]
-  resources :posts, only: [:index, :new, :create, :edit, :update, :destroy], shallow: true do
+  resources :posts, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :reviews, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :favorites, only: [:create, :destroy, :show]
     collection do

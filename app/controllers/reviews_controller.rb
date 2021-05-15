@@ -1,9 +1,8 @@
 class ReviewsController < ApplicationController
-  before_action :set_post_id, only: [:index, :new, :create]
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    @review = Review.where(post_id: @post.id)
+    @review = Review.where(post_id: @post.id).order("created_at DESC")
   end
 
   def new
@@ -13,7 +12,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.create(review_params)
     if @review.save
-      redirect_to favorite_path(@post)
+      redirect_to post_favorite_path(@post, @review.id)
     else
       render :new
     end
@@ -24,8 +23,9 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to favorite_path(@post)
+      redirect_to post_reviews_path(@post)
     else
       render :edit
     end
@@ -33,17 +33,13 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    redirect_to favorite_path(@post) if @review.destroy
+    redirect_to post_reviews_path(@post) if @review.destroy
   end
 
   private
 
-  def set_post_id
-    @post = Post.find(params[:post_id])
-  end
-
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
   end
 
   def review_params
