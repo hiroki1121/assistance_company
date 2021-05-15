@@ -14,3 +14,4 @@ ActiveStorage.start()
 
 require("../review")
 require("../link")
+require("../microphone")
