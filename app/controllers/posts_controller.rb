@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to favorite_path(@post.id)
+      redirect_to post_favorite_path(@post.id)
     else
       render :edit
     end
