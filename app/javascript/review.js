@@ -14,7 +14,7 @@ function review (){
         stars[j].classList.remove("fa-star-o");
         stars[j].classList.add("fa-star");
       }
-    })
+    });
 
     stars[i].addEventListener("click",function(){
       reviewStar.value = i+1;
@@ -34,4 +34,4 @@ function review (){
   }
 }
 
-window.addEventListener('load', review);
+window.addEventListener("load", review);
