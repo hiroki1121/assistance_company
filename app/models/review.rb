@@ -4,7 +4,7 @@ class Review < ApplicationRecord
 
   with_options presence: true do
     validates :title
-    validates :comment
     validates :score
+    validates :comment
   end
 end
