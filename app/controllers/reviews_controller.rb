@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_post, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    @review = Review.where(post_id: @post.id).order("created_at DESC")
+    @review = Review.where(post_id: @post.id).order('created_at DESC')
   end
 
   def new
@@ -43,6 +43,8 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:title, :comment, :score).merge(consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id)
+    params.require(:review).permit(:title, :comment, :score).merge(
+      consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id
+    )
   end
 end
