@@ -20,7 +20,7 @@
         <% end %>
       </div>
     </div>
-    <% elsif %>
+    <% elsif consignment_side_user_signed_in? %>
       <% if !Favorite.exists?(consignment_side_user_id: current_consignment_side_user.id, post_id: @post.id) %>
         <%= link_to "お気に入り", post_favorites_path(@post), method: :post, class:"favorite-btn" %>
       <% else %>
