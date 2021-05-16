@@ -36,12 +36,11 @@ class PostsController < ApplicationController
     redirect_to root_path if @post.destroy
   end
 
-  # def favirites
-  #   @favirite = current_consignment_side_user.favirites_posts.includes(:consignment_side_user).order('created_at DESC')
-  # end
-
   def search
     @posts = @q.result.includes(:contracted_side_user).order('created_at DESC')
+    @posts.each do |post|
+      @favorite = Favorite.find_by(params[post_id: post.id])
+    end
   end
 
   private

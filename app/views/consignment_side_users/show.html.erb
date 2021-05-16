@@ -17,7 +17,7 @@
     <% @posts.each do |post| %>
       <%= render "shared/company_digest", post: post %>
       <div class="delete-btn-form">
-        <%= link_to post_favorites_path(@favorite.post_id), method: :delete, class:"delete-btn" do %>
+        <%= link_to post_favorite_path(@favorite.post_id), method: :delete, class:"delete-btn" do %>
           <i class="far fa-trash-alt">削除する</i>
         <% end %>
       </div>
