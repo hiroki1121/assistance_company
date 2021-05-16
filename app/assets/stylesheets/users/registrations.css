@@ -122,7 +122,8 @@ button{
 
 .root-path {
   width: 150px;
-  background: #ffffff;
+  color: #ac6b25;
+  background-color: #ffffff;
   border: 1px solid #ac6b25;
   line-height: 30px;
   cursor: pointer;
