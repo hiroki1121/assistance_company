@@ -22,7 +22,7 @@ function microphone (){
     speech.start();
   });
 
-  speech.addEventListener('error' , function() {
+  speech.addEventListener('audioend' , function() {
     const insertBar = document.getElementById("temporary-search-bar")
     insertBar.remove();
   });
