@@ -30,7 +30,6 @@ function microphone (){
     const insertBar = document.getElementById("temporary-search-bar")
     insertBar.remove();
   });
-
 }
 
 window.addEventListener("load", microphone); 
