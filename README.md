@@ -1,4 +1,5 @@
 # 1.アプリケーション名
+
 <p>Assistance Company</p>
 <img width="70%" src="public/app-img.png">
 
@@ -9,9 +10,11 @@
 https://assistance-company.herokuapp.com
 
 # 4. ID/Pass
+
 ## 【BASIC認証】
 - ID：admin
 - password：a12345
+
 ## 【テスト用アカウント】
 委託側(consignment_side_users)
 - ID：consignment_test@test.com
@@ -20,6 +23,7 @@ https://assistance-company.herokuapp.com
 受託側(contracted_side_users)
 - ID：contracted_test@test.com
 - password：a12345
+
 # 5.利用方法
 - WebブラウザGoogle Chromeの最新版を利用してアクセスしてください。
 <br>※ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続してください。
@@ -31,26 +35,25 @@ https://assistance-company.herokuapp.com
 ## 【ペルソナ】
 - 性別と年齢：20代〜40代（男女）
 - 職業：（会社員及び個人事業主）
-# 7.要件定義
 
-
-
-# 8.実装した機能について
-## 【ER図】
-<img width="70%" src="public/er_diagram.png">
+# 6.機能設計
 
 ## 【ユーザー管理機能】
 - devise(registration,session)
 - consignment_side_users：委託側
 - contracted_side_users：受託側
 - マイページ（ヘッダーのユーザー名をクリック）
+
 ## 【会社投稿機能】
 Authority：contracted_side_users
 - 一つの会社から部署毎に複数の投稿を行うことを想定
+- 画像ファイルアップロード
 - 規模が小さい会社や個人事業主も使用すると考えられるため、URLや建物名、部署、電話番号（直通）は任意入力
+
 ## 【会社一覧表示機能】
 Authority：all_users
 - トップページに、投稿新着順に20社のみ（検索を前提）
+
 ## 【会社投稿詳細表示機能】
 Authority：all_users
 - 投稿された全ての情報、星レビュー平均点を表示
@@ -62,21 +65,35 @@ Authority：all_users
 ## 【会社投稿編集・削除機能】
 Authority：contracted_side_users
 - 詳細画面より編集、削除可能
+
 ## 【会社検索機能】
 Authority：all_users
 - 絞り込み検索（業種、都道府県、キーワード）
 - 音声検索（Web Speech API）
 <img width="70%" src="public/voice-search.gif">
-## 【お気に入り機能】
+
+## 【お気に入り投稿・削除機能】
 Authority：consignment_side_users
 - 詳細画面よりお気に入り登録可能
 - 登録したお気に入りはマイページに一覧表示
-## 【星レビュー機能】
+
+## 【星レビュー投稿・編集・削除・一覧表示機能】
 Authority：consignment_side_users
 - ★1~★5を選択
 <br>※評価対象が会社であるため、★1以上とし一定の評価を担保
 - レビュータイトル、本文
-# 9. DB設計
+
+## 【単体テスト機能】
+実施事項
+- ユーザー管理機能（新規登録）
+- 会社投稿機能
+- 星レビュー投稿機能
+
+# 7. DB設計
+
+## 【ER図】
+
+<img width="70%" src="public/er_diagram.png">
 
 ## consignment_side_usersテーブル
 
@@ -163,8 +180,9 @@ Authority：consignment_side_users
 - belongs_to :consignment_side_user
 - belongs_to :post
 
-# 10. 開発環境
+# 8.開発環境、インフラ
 - Ruby on Rails (6.1.3.1)
 - Ruby(2.7.2)
 - MySQL
 - VSCode
+- AWS
