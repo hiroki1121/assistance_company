@@ -1,5 +1,5 @@
 # 1.アプリケーション名
-<p color="red">Assistance Company</p>
+<p>Assistance Company</p>
 <img width="70%" src="public/app-img.png">
 
 # 2.アプリケーション概要
@@ -40,26 +40,40 @@ https://assistance-company.herokuapp.com
 <img width="70%" src="public/er_diagram.png">
 
 ## 【ユーザー管理機能】
-- ユーザー管理機能は、ペルソナが委託側と受託側に分かれるため、deviseを用いて、委託側(consignment_side_users)と受託側(contracted_side_users)の実装を行いました。
-- 委託側(consignment_side_users)は、検索やお気に入り、レビューを行うことができます。
-- 受託側(contracted_side_users)は会社投稿、編集、削除、検索を行うことができますが、お気に入り、レビューを行うことはできません。新規登録については、一つの会社から部署毎に複数の投稿を行うことを想定し、入力フォームは最小限の情報としています。
+- devise(registration,session)
+- consignment_side_users：委託側
+- contracted_side_users：受託側
+- マイページ（ヘッダーのユーザー名をクリック）
 ## 【会社投稿機能】
-- 会社投稿機能は、一つの会社から部署毎に複数の投稿を行うことを想定して何度も投稿できるようにしています。また、規模が小さい会社や個人事業主も投稿することを想定し、URLや建物名、部署、電話番号（直通）は任意入力としています。
+Authority：contracted_side_users
+- 一つの会社から部署毎に複数の投稿を行うことを想定
+- 規模が小さい会社や個人事業主も使用すると考えられるため、URLや建物名、部署、電話番号（直通）は任意入力
 ## 【会社一覧表示機能】
-- トップページに、投稿新着順に20社のみ、会社概要を表示できるようにしています。これは、検索を行うことを前提としているためです。
+Authority：all_users
+- トップページに、投稿新着順に20社のみ（検索を前提）
 ## 【会社投稿詳細表示機能】
-- 会社一覧表示をクリックすると、会社詳細ページへ遷移します。ここには、登録されている全ての情報と星レビュー機能の平均点が表示されています。
-- 星レビュー平均点をクリックするとレビュー一覧ページへ、URLをクリックすると該当ページへ遷移します。
+Authority：all_users
+- 投稿された全ての情報、星レビュー平均点を表示
+- URLをクリックすると、該当ページへ遷移（新しいページ）
+<br>※ログイン状況により表示ボタンが異なる
+<br>consignment_side_users：お気に入り、星レビュー
+<br>contracted_side_users：投稿編集、削除
 ## 【会社投稿編集・削除機能】
-- 受託側(contracted_side_users)のみ自ら投稿した情報を編集、削除することができます。
+Authority：contracted_side_users
+- 詳細画面より編集、削除可能
 ## 【会社検索機能】
-- 業種、都道府県、キーワードにより絞り込み検索を行うことができます。※未入力の場合には、全ての会社が表示される（検索のため、制限なし）。
-- 検索ボタン横のマイクボタンを押すと、音声検索を行うことができます。※Web Speech APIを利用
+Authority：all_users
+- 絞り込み検索（業種、都道府県、キーワード）
+- 音声検索（Web Speech API）
 ## 【お気に入り機能】
-- 委託側(consignment_side_users)は会社詳細ページより、お気に入り登録、削除を行うことができます。登録したお気に入りは、マイページ（ヘッダーのユーザー名をクリック）で確認、削除することができます。
+Authority：consignment_side_users
+- 詳細画面よりお気に入り登録可能
+- 登録したお気に入りはマイページに一覧表示
 ## 【星レビュー機能】
-- 委託側(consignment_side_users)は会社詳細ページより、レビューを行うことができます。レビュー先が会社ということで、一定の評価を担保するため、星0は選択出来ないようにしています。
-- 投稿したレビューは、編集、削除を行うことができます。
+Authority：consignment_side_users
+- ★1~★5を選択
+<br>※評価対象が会社であるため、★1以上とし一定の評価を担保
+- レビュータイトル、本文
 # 9. DB設計
 
 ## consignment_side_usersテーブル
@@ -146,3 +160,9 @@ https://assistance-company.herokuapp.com
 ### Association
 - belongs_to :consignment_side_user
 - belongs_to :post
+
+# 10. 開発環境
+- Ruby on Rails (6.1.3.1)
+- Ruby(2.7.2)
+- MySQL
+- VSCode
