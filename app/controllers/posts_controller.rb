@@ -38,9 +38,7 @@ class PostsController < ApplicationController
 
   def search
     @posts = @q.result.includes(:contracted_side_user).order('created_at DESC')
-    @posts.each do |post|
-      @favorite = Favorite.find_by(post_id: post.id)
-    end
+    @favorite = Favorite.find_by(params[:id])
   end
 
   private
