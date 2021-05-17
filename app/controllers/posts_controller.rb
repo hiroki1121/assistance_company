@@ -39,7 +39,11 @@ class PostsController < ApplicationController
   def search
     @posts = @q.result.includes(:contracted_side_user).order('created_at DESC')
     @posts.each do |post|
-      @favorite = Favorite.find_by(post_id: post.id)
+      if post.present?
+        @favorite = Favorite.find_by(post_id: post.id)
+      else
+        @favorite = Favorite.all
+      end
     end
   end
 
