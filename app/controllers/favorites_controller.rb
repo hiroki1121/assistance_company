@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
   end
 
   def show
-    Favorite.find_by(post_id: @post.id)
+    @favorite = Favorite.find_by(post_id: @post.id)
     @review = Review.where(post_id: @post.id)
   end
 
