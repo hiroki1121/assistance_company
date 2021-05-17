@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_any!, except: [:index, :search]
+  before_action :authenticate_contracted_side_user!, except: [:index, :search]
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action :search_post, only: [:index, :search]
 
@@ -51,10 +51,6 @@ class PostsController < ApplicationController
       :building_name, :employee_number, :division, :representative_name,
       :email, :represent_phone_number, :direct_phone_number, :business_detail
     ).merge(contracted_side_user_id: current_contracted_side_user.id)
-  end
-
-  def authenticate_any!
-    redirect_to contracted_side_user_session_path unless contracted_side_user_signed_in?
   end
 
   def set_post

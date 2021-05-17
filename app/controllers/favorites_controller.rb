@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :authenticate_any!, only: [:create, :destroy]
+  before_action :authenticate_consignment_side_user!, only: [:create, :destroy]
   before_action :set_post, only: [:create, :destroy, :show]
 
   def create
@@ -22,9 +22,5 @@ class FavoritesController < ApplicationController
 
   def set_post
     @post = Post.find(params[:post_id])
-  end
-
-  def authenticate_any!
-    redirect_to consignment_side_user_session_path unless consignment_side_user_signed_in?
   end
 end
