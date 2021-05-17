@@ -1,7 +1,8 @@
 class ContractedSideUsersController < ApplicationController
   before_action :authenticate_any!
   def show
-    @post = Post.where(params[contracted_side_user_id: current_contracted_side_user.id])
+    @posts = Post.where(contracted_side_user_id: current_contracted_side_user.id).order("created_at DESC")
+    @post = Post.find_by(contracted_side_user_id: current_contracted_side_user.id)
   end
 
   private

@@ -4,19 +4,25 @@
     <h1 class="title-bar-main-content">マイページ</h1>
   </div>
 </div>
-  <% @post.each do |post| %>
-    <%= render "shared/company_detail", post: post %>
-    <div class="post-btn-form">
-      <div class="posted-edit-btn-form">
-        <%= link_to edit_post_path(post), method: :get, class:"posted-edit-btn" do %>
-          <i class="fas fa-edit">編集する</i>
-        <% end %>
+<% if @posts.present? && current_contracted_side_user.id == @post.contracted_side_user_id %>
+  <% @posts.each do |post| %>
+      <%= render "shared/company_detail", post: post %>
+      <div class="post-btn-form">
+        <div class="posted-edit-btn-form">
+          <%= link_to edit_post_path(post), method: :get, class:"posted-edit-btn" do %>
+            <i class="fas fa-edit">編集する</i>
+          <% end %>
+        </div>
+        <div class="posted-delete-btn-form">
+          <%= link_to post_path(post), method: :delete, class:"posted-delete-btn" do %>
+            <i class="far fa-trash-alt">削除する</i>
+          <% end %>
+        </div>
       </div>
-      <div class="posted-delete-btn-form">
-        <%= link_to post_path(post), method: :delete, class:"posted-delete-btn" do %>
-          <i class="far fa-trash-alt">削除する</i>
-        <% end %>
-      </div>
-    </div>
   <% end %>
+<% else %>
+  <div class="no-search-message">
+    <i class="fas fa-exclamation-triangle">投稿されている会社はありません</i>
+  </div>
+<% end %>
 <%= render "shared/footer" %>
