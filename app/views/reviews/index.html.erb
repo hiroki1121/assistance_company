@@ -5,7 +5,7 @@
   </div>
 </div>
 <div class="company-review-wrap">
-  <%= link_to :back do %>
+  <%= link_to post_path(@post.id) do %>
     <div class="review-company-bar">
       <%= image_tag @post.image, class:"company-bar-img" %>
       <ul class="review-company-info">

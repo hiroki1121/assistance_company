@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
-  before_action :authenticate_contracted_side_user!, except: [:index, :search]
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :authenticate_contracted_side_user!, except: [:index, :search, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :search_post, only: [:index, :search]
 
   def index
     @posts = Post.order('created_at DESC').limit(20)
-    @favorite = Favorite.all
   end
 
   def new
@@ -21,12 +20,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.where(post_id: @post.id)
+  end
+
   def edit
   end
 
   def update
     if @post.update(post_params)
-      redirect_to post_favorite_path(@post.id)
+      redirect_to post_path(@post.id)
     else
       render :edit
     end
@@ -38,13 +41,6 @@ class PostsController < ApplicationController
 
   def search
     @posts = @q.result.includes(:contracted_side_user).order('created_at DESC')
-    @posts.each do |post|
-      if post.present?
-        @favorite = Favorite.find_by(post_id: post.id)
-      else
-        @favorite = Favorite.all
-      end
-    end
   end
 
   private

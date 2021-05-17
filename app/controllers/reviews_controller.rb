@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.create(review_params)
     if @review.save
-      redirect_to post_favorite_path(@post, @review.id)
+      redirect_to post_path(@post.id)
     else
       render :new
     end
