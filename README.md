@@ -58,6 +58,7 @@ Authority：all_users
 <br>※ログイン状況により表示ボタンが異なる
 <br>consignment_side_users：お気に入り、星レビュー
 <br>contracted_side_users：投稿編集、削除
+
 ## 【会社投稿編集・削除機能】
 Authority：contracted_side_users
 - 詳細画面より編集、削除可能
@@ -65,6 +66,7 @@ Authority：contracted_side_users
 Authority：all_users
 - 絞り込み検索（業種、都道府県、キーワード）
 - 音声検索（Web Speech API）
+<img width="70%" src="public/voice-search.gif">
 ## 【お気に入り機能】
 Authority：consignment_side_users
 - 詳細画面よりお気に入り登録可能
