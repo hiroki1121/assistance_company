@@ -5,6 +5,12 @@ function microphone (){
 
   const micBtn = document.getElementById("microphone");
   const inputBox = document.getElementById("input-box");
+  
+  micBtn.addEventListener('dblclick' , function() {
+    const insertBar = document.getElementById("temporary-search-bar")
+    insertBar.remove();
+    window.location.reload();
+  });
 
   micBtn.addEventListener('click' , function() {
     const searchBar = document.getElementById("search-bar")
@@ -16,17 +22,17 @@ function microphone (){
     speech.start();
   });
 
+  speech.addEventListener('error' , function() {
+    const insertBar = document.getElementById("temporary-search-bar")
+    insertBar.remove();
+  });
+
   speech.addEventListener('result' , function(e) {
     console.log(e);
     const text = e.results[0][0].transcript;
     document.forms.search_form.input_box.value = text;
     const searchBtn = document.getElementById("search-btn")
     searchBtn.click();
-    const insertBar = document.getElementById("temporary-search-bar")
-    insertBar.remove();
-  });
-
-  speech.addEventListener('error' , function() {
     const insertBar = document.getElementById("temporary-search-bar")
     insertBar.remove();
   });
