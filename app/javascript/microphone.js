@@ -22,6 +22,8 @@ function microphone (){
     document.forms.search_form.input_box.value = text;
     const searchBtn = document.getElementById("search-btn")
     searchBtn.click();
+    const insertBar = document.getElementById("temporary-search-bar")
+    insertBar.remove();
   });
 
   speech.addEventListener('error' , function() {
