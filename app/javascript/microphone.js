@@ -5,7 +5,7 @@ function microphone (){
 
   const micBtn = document.getElementById("microphone");
   const inputBox = document.getElementById("input-box");
-  
+
   micBtn.addEventListener('dblclick' , function() {
     const insertBar = document.getElementById("temporary-search-bar")
     insertBar.remove();
@@ -15,9 +15,9 @@ function microphone (){
   micBtn.addEventListener('click' , function() {
     const searchBar = document.getElementById("search-bar")
     const html = `
-    <div class="temporary-search-bar", id="temporary-search-bar">
-      <i class="fas fa-microphone">  音声を認識しています.....</i>
-    </div>`;
+      <div class="temporary-search-bar", id="temporary-search-bar">
+        <i class="fas fa-microphone">  音声を認識しています.....</i>
+      </div>`;
     searchBar.insertAdjacentHTML("beforeend",html);
     speech.start();
   });
