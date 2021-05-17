@@ -1,0 +1,14 @@
+.temporary-search-bar {
+  width: 60%;
+  height: 200px;
+  background-color: #001e43;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temporary-search-bar i {
+  color: #ffffff;
+  font-size: 40px;
+}
