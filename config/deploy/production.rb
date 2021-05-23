@@ -60,3 +60,6 @@
 #     # password: "please use keys"
 #   }
 server '54.178.64.215', user: 'ec2-user', roles: %w{app db web}
+if ($http_x_forwarded_proto = 'http'){
+  return 301 https://www.assistance-company.com;
+}
