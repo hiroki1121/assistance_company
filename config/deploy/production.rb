@@ -61,5 +61,5 @@
 #   }
 server '54.178.64.215', user: 'ec2-user', roles: %w{app db web}
 if $http_x_forwarded_proto = 'http'
-  return https://assistance-company.com/
+  return https://assistance-company.com
 end
