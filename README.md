@@ -186,6 +186,8 @@ Authority：consignment_side_users
 # 8.開発環境、インフラ
 - Ruby on Rails (6.1.3.1)
 - Ruby(2.7.2)
-- MySQL
-- VSCode
+- Visual Studio Code
 - AWS
+- Nginx
+- Unicorn
+- MariaDB
