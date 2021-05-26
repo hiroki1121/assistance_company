@@ -182,10 +182,12 @@ Authority：consignment_side_users
 - belongs_to :post
 
 # 9.開発環境、インフラ
-- Ruby on Rails (6.1.3.1)
-- Ruby(2.7.2)
+- macOS
 - Visual Studio Code
-- AWS
+- Ruby(2.7.2)
+- Ruby on Rails (6.1.3.1)
+- AWS (EC2, Route53, Certificate Manager)
 - Nginx
 - Unicorn
 - MariaDB
+- Git/GitHub
