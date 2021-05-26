@@ -4,53 +4,55 @@
     <h1 class="title-bar-main-content">レビュー一覧</h1>
   </div>
 </div>
-<div class="company-review-wrap">
-  <%= link_to post_path(@post.id) do %>
-    <div class="review-company-bar">
-      <%= image_tag @post.image, class:"company-bar-img" %>
-      <ul class="review-company-info">
-        <li class="review-company-bar-text">会社名：<%= @post.company_name %></li>
-        <li class="review-count"><%= @review.count %>件のレビュー</li>
-      </ul>
-    </div>
-  <% end %>
-</div>
-<% @review.each do |review| %>
-  <% if @review.present? %>
-    <div class="company-review-main">
-      <div class="company-review-wrap">
-        <div class="company-review-list">
-          <ul class="review-items">
-            <li class="review-item"><span class="fa fa-star" id="star"></span><%= review.score %>点</li>
-            <li class="review-item"><b><%= review.title %></b></li>
-            <li class="review-item" style="color:#a0a0a0"><%= review.created_at.to_s(:datetime_jp) %>に投稿済み</li>
-            <li class="review-item"><%= review.comment %></li>
-          </ul>
-        </div>
-        <% if consignment_side_user_signed_in? && review.consignment_side_user_id == current_consignment_side_user.id %>
-          <div class="post-btn-form">
-            <div class="posted-edit-btn-form">
-              <%= link_to edit_post_review_path(id: review.id, post_id: review.post_id), method: :get, class:"posted-edit-btn" do %>
-                <i class="fas fa-edit">編集する</i>
-              <% end %>
-            </div>
-            <div class="posted-delete-btn-form">
-              <%= link_to post_review_path(id: review.id, post_id: review.post_id), method: :delete, class:"posted-delete-btn" do %>
-                <i class="far fa-trash-alt">削除する</i>
-              <% end %>
-            </div>
+<div class="company-review-form">
+  <div class="company-review-wrap">
+    <%= link_to post_path(@post.id) do %>
+      <div class="review-company-bar">
+        <%= image_tag @post.image, class:"company-bar-img" %>
+        <ul class="review-company-info">
+          <li class="review-company-bar-text">会社名：<%= @post.company_name %></li>
+          <li class="review-count"><%= @review.count %>件のレビュー</li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <% @review.each do |review| %>
+    <% if @review.present? %>
+      <div class="company-review-main">
+        <div class="company-review-wrap">
+          <div class="company-review-list">
+            <ul class="review-items">
+              <li class="review-item"><span class="fa fa-star" id="star"></span><%= review.score %>点</li>
+              <li class="review-item"><b><%= review.title %></b></li>
+              <li class="review-item" style="color:#a0a0a0"><%= review.created_at.to_s(:datetime_jp) %>に投稿済み</li>
+              <li class="review-item"><%= review.comment %></li>
+            </ul>
           </div>
-        <% end %>
-      </div>
-    </div>
-  <% else %>
-    <div class="company-review-main">
-      <div class="company-review-wrap">
-        <div class="no-search-message">
-          <i class="fas fa-exclamation-triangle">現在、レビューは投稿されておりません</i>
+          <% if consignment_side_user_signed_in? && review.consignment_side_user_id == current_consignment_side_user.id %>
+            <div class="post-btn-form">
+              <div class="posted-edit-btn-form">
+                <%= link_to edit_post_review_path(id: review.id, post_id: review.post_id), method: :get, class:"posted-edit-btn" do %>
+                  <i class="fas fa-edit">編集する</i>
+                <% end %>
+              </div>
+              <div class="posted-delete-btn-form">
+                <%= link_to post_review_path(id: review.id, post_id: review.post_id), method: :delete, class:"posted-delete-btn" do %>
+                  <i class="far fa-trash-alt">削除する</i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-    </div>
-  <% end %>
-<% end%>
+    <% else %>
+      <div class="company-review-main">
+        <div class="company-review-wrap">
+          <div class="no-search-message">
+            <i class="fas fa-exclamation-triangle">現在、レビューは投稿されておりません</i>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end%>
+</div>
 <%= render "shared/footer" %>

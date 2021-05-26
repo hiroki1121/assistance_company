@@ -1,14 +1,18 @@
+.company-review-form {
+  height: auto;
+  min-height: 100%;
+}
+
 .company-review-main {
   width: 100%;
   min-width: 800px;
-  min-height: 250px;
+  height: auto;
   background-color: #f7f7f7;
   margin-top: 30px;
 }
 
 .company-review-wrap {
   width: 60vw;
-  height: 100vh;
   margin: 0 auto;
 }
 
