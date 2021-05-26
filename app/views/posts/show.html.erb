@@ -7,7 +7,7 @@
   </div>
   <%= render "shared/company_detail", post: @post %>
   <div class="show-btn-form">
-    <% if contracted_side_user_signed_in? %>
+    <% if contracted_side_user_signed_in? && @post.contracted_side_user_id == current_contracted_side_user.id %>
       <div class="post-btn-form">
       <div class="posted-edit-btn-form">
         <%= link_to edit_post_path(@post), method: :get, class:"posted-edit-btn" do %>
