@@ -1,5 +1,6 @@
 .top-page-header {
   width: 100vw;
+  min-width: 1400px;
   height: 70px;
   background-color: transparent;
   display: flex;
