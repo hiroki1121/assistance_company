@@ -191,3 +191,6 @@ Authority：consignment_side_users
 - Unicorn
 - MariaDB
 - Git/GitHub
+
+## 【構成図】
+<img src="public/aws.png">
