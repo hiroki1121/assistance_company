@@ -193,4 +193,4 @@ Authority：consignment_side_users
 - Git/GitHub
 
 ## 【構成図】 
-<img src="public/aws.svg">
+<img src="public/aws.png">
