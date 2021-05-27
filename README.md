@@ -92,7 +92,7 @@ Authority：consignment_side_users
 
 # 8. DB設計
 
-## 【ER図】
+## 【ER図】 
 
 <img width="70%" src="public/er_diagram.png">
 
