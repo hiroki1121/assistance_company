@@ -192,5 +192,5 @@ Authority：consignment_side_users
 - MariaDB
 - Git/GitHub
 
-## 【構成図】
+## 【構成図】 
 <img src="public/aws.svg">
